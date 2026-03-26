@@ -1,9 +1,10 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en" data-theme="light">
 <head>
   <meta charset="UTF-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>HydroFarm Pro — B2B Dashboard</title>
+  <link rel="icon" href="images/logo_leaf.png" type="image/png"/>
   <meta name="description" content="HydroFarm Pro B2B portal — farm monitoring, analytics, orders, and support."/>
   <link rel="stylesheet" href="css/style.css"/>
   <link rel="stylesheet" href="css/nav.css"/>
@@ -22,34 +23,6 @@
 </head>
 <body>
 
-<!-- TOP NAV -->
-<nav class="site-nav" id="site-nav" style="z-index:1001;">
-  <div class="nav-inner">
-    <div style="display:flex;align-items:center;gap:1rem;">
-      <button id="dash-sidebar-toggle" class="icon-btn" title="Toggle Sidebar" style="font-size:1.1rem;">&#9776;</button>
-      <a href="index.html" class="nav-logo">
-        <div class="logo-icon"><img src="images/logo_leaf.png" alt="" style="width:28px;height:28px;object-fit:cover;border-radius:6px;"/></div>
-        <span class="logo-text">Hydro<span>Farm</span> Pro</span>
-      </a>
-    </div>
-    <div class="nav-links">
-      <a href="index.html" class="nav-link">Home</a>
-      <a href="home2.html" class="nav-link">Home 2</a>
-      <a href="technology.html" class="nav-link">Technology</a>
-      <a href="services.html" class="nav-link">Services</a>
-      <a href="products.html" class="nav-link">Products</a>
-      <a href="dashboard.html" class="nav-link">Dashboard</a>
-      <a href="about.html" class="nav-link">About</a>
-      <a href="contact.html" class="nav-link">Contact</a>
-    </div>
-    <div class="nav-actions">
-      <button class="icon-btn" data-theme-toggle title="Toggle Theme">&#9681;</button>
-      <button class="icon-btn" data-rtl-toggle id="rtl-label">RTL</button>
-      <a href="signup.html" class="nav-link nav-signup-btn">Sign Up</a>
-      <button class="hamburger" id="hamburger"><span class="hamburger-line"></span><span class="hamburger-line"></span><span class="hamburger-line"></span></button>
-    </div>
-  </div>
-</nav>
 
 <div class="nav-overlay" id="nav-overlay"></div>
 <div class="mobile-menu" id="mobile-menu">
@@ -66,8 +39,11 @@
   <!-- SIDEBAR -->
   <aside class="dash-sidebar" id="dash-sidebar">
     <div class="dash-sidebar-header">
+      <a href="index.html" class="dash-brand">
+        <div class="logo-icon"><img src="images/logo_leaf.png" alt="" style="width:24px;height:24px;object-fit:cover;"/></div>
+        <span class="logo-text">Hydro<span>Farm</span> Pro</span>
+      </a>
       <div class="dash-farm-name">
-        <img src="images/logo_leaf.png" alt="" style="width:20px;height:20px;border-radius:4px;object-fit:cover;"/>
         Dubai Farm Alpha
       </div>
       <div class="dash-farm-status"><div class="status-dot"></div> All Systems Online</div>
@@ -120,6 +96,7 @@
     <!-- OVERVIEW -->
     <div id="overview-panel">
       <div class="dash-header">
+        <button class="dash-hamburger" id="dash-hamburger"><span class="dash-hamburger-line"></span><span class="dash-hamburger-line"></span><span class="dash-hamburger-line"></span></button>
         <div>
           <div class="dash-page-title">Farm Overview</div>
           <div class="dash-date" id="dash-clock">Loading...</div>
@@ -192,6 +169,7 @@
     <!-- MONITORING -->
     <div id="monitoring-panel" style="display:none;">
       <div class="dash-header">
+        <button class="dash-hamburger" id="dash-hamburger"><span class="dash-hamburger-line"></span><span class="dash-hamburger-line"></span><span class="dash-hamburger-line"></span></button>
         <div>
           <div class="dash-page-title">Live Monitoring</div>
           <div class="dash-date" style="display:flex;align-items:center;gap:0.6rem;">
@@ -208,7 +186,7 @@
         <div class="sensor-card"><div class="sensor-label">pH Level</div><div class="sensor-value" id="sensor-ph">6.2</div><div class="sensor-unit">Target: 5.8–6.5</div><div class="sensor-bar"><div class="sensor-fill" id="sensor-ph-bar" style="width:44%"></div></div></div>
         <div class="sensor-card"><div class="sensor-label">EC Level</div><div class="sensor-value" id="sensor-ec">1.8 mS/cm</div><div class="sensor-unit">Target: 1.6–2.0</div><div class="sensor-bar"><div class="sensor-fill" id="sensor-ec-bar" style="width:45%"></div></div></div>
         <div class="sensor-card"><div class="sensor-label">CO2 Level</div><div class="sensor-value" id="sensor-co2">800 ppm</div><div class="sensor-unit">Target: 800–1200 ppm</div><div class="sensor-bar"><div class="sensor-fill" id="sensor-co2-bar" style="width:40%"></div></div></div>
-        <div class="sensor-card"><div class="sensor-label">Light (PPFD)</div><div class="sensor-value" id="sensor-light">420 μmol</div><div class="sensor-unit">Target: 400–600 μmol</div><div class="sensor-bar"><div class="sensor-fill" id="sensor-light-bar" style="width:70%"></div></div></div>
+        <div class="sensor-card"><div class="sensor-label">Light (PPFD)</div><div class="sensor-value" id="sensor-light">420 µmol</div><div class="sensor-unit">Target: 400–600 µmol</div><div class="sensor-bar"><div class="sensor-fill" id="sensor-light-bar" style="width:70%"></div></div></div>
       </div>
 
       <div class="data-table-card">
@@ -230,6 +208,7 @@
     <!-- ANALYTICS -->
     <div id="analytics-panel" style="display:none;">
       <div class="dash-header">
+        <button class="dash-hamburger" id="dash-hamburger"><span class="dash-hamburger-line"></span><span class="dash-hamburger-line"></span><span class="dash-hamburger-line"></span></button>
         <div><div class="dash-page-title">Analytics</div><div class="dash-date">2026 — Full Year</div></div>
         <div class="dash-header-actions"><select class="form-control" style="width:auto;padding:0.4rem 1rem;font-size:0.85rem;"><option>2026</option><option>2025</option></select></div>
       </div>
@@ -248,6 +227,7 @@
     <!-- ORDERS -->
     <div id="orders-panel" style="display:none;">
       <div class="dash-header">
+        <button class="dash-hamburger" id="dash-hamburger"><span class="dash-hamburger-line"></span><span class="dash-hamburger-line"></span><span class="dash-hamburger-line"></span></button>
         <div><div class="dash-page-title">Orders</div><div class="dash-date">3 active orders</div></div>
         <div class="dash-header-actions"><a href="products.html" class="btn btn-primary btn-sm">New Order</a></div>
       </div>
@@ -268,6 +248,7 @@
     <!-- SUPPORT TICKETS -->
     <div id="tickets-panel" style="display:none;">
       <div class="dash-header">
+        <button class="dash-hamburger" id="dash-hamburger"><span class="dash-hamburger-line"></span><span class="dash-hamburger-line"></span><span class="dash-hamburger-line"></span></button>
         <div><div class="dash-page-title">Support Tickets</div><div class="dash-date">2 open tickets</div></div>
         <div class="dash-header-actions"><button class="btn btn-primary btn-sm">New Ticket</button></div>
       </div>
@@ -313,6 +294,21 @@ function switchDashTab(tab) {
     if (a.getAttribute('onclick') && a.getAttribute('onclick').includes(tab)) a.classList.add('active');
   });
 }
+</script>
+<script>
+  const dashHamburger = document.getElementById('dash-hamburger');
+  const dashSidebar = document.getElementById('dash-sidebar');
+  if (dashHamburger && dashSidebar) {
+    dashHamburger.addEventListener('click', (e) => {
+      e.stopPropagation();
+      dashSidebar.classList.toggle('open');
+    });
+    document.addEventListener('click', (e) => {
+      if (dashSidebar.classList.contains('open') && !dashSidebar.contains(e.target)) {
+        dashSidebar.classList.remove('open');
+      }
+    });
+  }
 </script>
 </body>
 </html>

@@ -67,6 +67,15 @@
 }
 .nav-signup-btn:hover { transform: translateY(-1px); box-shadow: 0 4px 16px rgba(30,111,76,0.35); background: rgba(82,183,136,0.14) !important; color: var(--accent) !important; }
 
+.nav-quote-btn {
+  padding: 0.45em 1.2em;
+  border: 1.5px solid var(--accent);
+  color: var(--accent) !important; border-radius: 50px; font-size: 0.85rem; font-weight: 700;
+  transition: all var(--transition);
+  text-decoration: none;
+}
+.nav-quote-btn:hover { background: var(--accent); color: #fff !important; transform: translateY(-1px); box-shadow: 0 4px 16px rgba(82,183,136,0.25); }
+
 /* ── Icon Buttons (theme, RTL) ── */
 .icon-btn {
   width: 38px; height: 38px; border-radius: 10px;
@@ -181,7 +190,5 @@
 @media (max-width: 1024px) {
   .nav-links { display: none; }
   .hamburger { display: flex; }
-}
-@media (max-width: 480px) {
-  .nav-actions .icon-btn { display: none; }
+  .nav-actions .icon-btn, .nav-actions .nav-signup-btn, .nav-actions .nav-quote-btn { display: none; }
 }

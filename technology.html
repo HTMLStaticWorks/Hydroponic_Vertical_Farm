@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>HydroFarm Pro — Technology</title>
+  <meta name="description" content="IoT monitoring, AI crop optimization, climate control, and LED grow lighting — the tech behind HydroFarm Pro vertical farms."/>
+  <link rel="stylesheet" href="css/style.css"/>
+  <link rel="stylesheet" href="css/nav.css"/>
+  <style>
+    .tech-feature {
+      display: grid; grid-template-columns: 1fr 1fr; gap: 5rem; align-items: center;
+      padding: 5rem 0; border-bottom: 1px solid var(--border-light);
+    }
+    .tech-feature:last-child { border-bottom: none; }
+    .tech-feature.reverse { direction: rtl; }
+    .tech-feature.reverse > * { direction: ltr; }
+    @media(max-width:768px) { .tech-feature, .tech-feature.reverse { grid-template-columns:1fr; direction:ltr; } }
+    .tech-visual {
+      border-radius: 24px; overflow: hidden;
+      box-shadow: var(--shadow-lg); position: relative;
+    }
+    .tech-visual img { width:100%; height:340px; object-fit:cover; display:block; }
+    .tech-spec { display: flex; align-items: center; gap: 1rem; padding: 1rem; background: var(--bg-alt); border-radius: var(--radius-sm); border: 1px solid var(--border-light); margin-bottom: 0.8rem; }
+    .tech-spec-icon { width:40px; height:40px; border-radius:10px; object-fit:cover; flex-shrink:0; }
+    .tech-spec-val { font-family: 'Outfit',sans-serif; font-size: 1.5rem; font-weight: 800; color: var(--primary); }
+    [data-theme="dark"] .tech-spec-val { color: var(--accent); }
+    .tech-spec-label { font-size: 0.82rem; color: var(--text-muted); }
+    .tech-overview-card { text-align:center; cursor:pointer; }
+    .tech-overview-card img { width:100%; height:140px; object-fit:cover; border-radius:14px; margin-bottom:1rem; }
+  </style>
+</head>
+<body>
+<!-- NAV -->
+<nav class="site-nav" id="site-nav">
+  <div class="nav-inner">
+    <a href="index.html" class="nav-logo">
+      <div class="logo-icon"><img src="images/logo_leaf.png" alt="" style="width:28px;height:28px;object-fit:cover;border-radius:6px;"/></div>
+      <span class="logo-text">Hydro<span>Farm</span> Pro</span>
+    </a>
+    <div class="nav-links">
+      <a href="index.html" class="nav-link">Home</a>
+      <a href="home2.html" class="nav-link">Home 2</a>
+      <a href="technology.html" class="nav-link">Technology</a>
+      <a href="services.html" class="nav-link">Services</a>
+      <a href="products.html" class="nav-link">Products</a>
+      <a href="dashboard.html" class="nav-link">Dashboard</a>
+      <a href="about.html" class="nav-link">About</a>
+      <a href="contact.html" class="nav-link">Contact</a>
+    </div>
+    <div class="nav-actions">
+      <button class="icon-btn" data-theme-toggle>&#9681;</button>
+      <button class="icon-btn" data-rtl-toggle id="rtl-label">RTL</button>
+      <a href="signup.html" class="nav-link nav-signup-btn">Sign Up</a>
+      <button class="hamburger" id="hamburger"><span class="hamburger-line"></span><span class="hamburger-line"></span><span class="hamburger-line"></span></button>
+    </div>
+  </div>
+</nav>
+<div class="nav-overlay" id="nav-overlay"></div>
+<div class="mobile-menu" id="mobile-menu">
+  <div class="mobile-menu-header">
+    <a href="index.html" class="nav-logo"><div class="logo-icon"><img src="images/logo_leaf.png" alt="" style="width:24px;height:24px;object-fit:cover;border-radius:5px;"/></div><span class="logo-text">Hydro<span>Farm</span> Pro</span></a>
+    <button class="mobile-close" id="mobile-close">&#10005;</button>
+  </div>
+  <nav class="mobile-nav-links">
+    <a href="index.html">Home</a>
+    <a href="home2.html">Home 2</a>
+    <a href="technology.html">Technology</a>
+    <a href="services.html">Services</a>
+    <a href="products.html">Products</a>
+    <a href="dashboard.html">Dashboard</a>
+    <a href="about.html">About</a>
+    <a href="contact.html">Contact</a>
+  </nav>
+  <div class="mobile-toggles"><button class="icon-btn" data-theme-toggle>&#9681;</button><button class="icon-btn" data-rtl-toggle>RTL</button></div>
+  <div class="mobile-actions"><a href="signup.html" class="btn btn-primary">Sign Up Free</a><a href="contact.html" class="btn btn-outline">Get a Quote</a></div>
+</div>
+
+<!-- PAGE HERO -->
+<section class="page-hero">
+  <div class="container">
+    <nav class="breadcrumb"><a href="index.html">Home</a><span>/</span><span style="color:#fff;">Technology</span></nav>
+    <h1>Smart Tech for <span style="color:var(--accent2)">Smarter Farms</span></h1>
+    <p>Four integrated technology pillars that give you complete control and visibility over your vertical farm operation.</p>
+  </div>
+</section>
+
+<!-- TECH OVERVIEW GRID -->
+<section class="section">
+  <div class="container">
+    <div class="grid-4" style="margin-bottom:4rem;">
+      <div class="card reveal reveal-delay-1 tech-overview-card" onclick="document.getElementById('iot').scrollIntoView({behavior:'smooth'})">
+        <img src="images/tech_iot.png" alt="IoT Monitoring"/>
+        <h4>IoT Monitoring</h4>
+        <p style="font-size:0.88rem;">Real-time sensor network across all growing zones</p>
+      </div>
+      <div class="card reveal reveal-delay-2 tech-overview-card" onclick="document.getElementById('ai').scrollIntoView({behavior:'smooth'})">
+        <img src="images/tech_ai.png" alt="AI Optimization"/>
+        <h4>AI Optimization</h4>
+        <p style="font-size:0.88rem;">Machine learning crop growth prediction</p>
+      </div>
+      <div class="card reveal reveal-delay-3 tech-overview-card" onclick="document.getElementById('climate').scrollIntoView({behavior:'smooth'})">
+        <img src="images/tech_climate.png" alt="Climate Control"/>
+        <h4>Climate Control</h4>
+        <p style="font-size:0.88rem;">Precision HVAC and environmental management</p>
+      </div>
+      <div class="card reveal reveal-delay-4 tech-overview-card" onclick="document.getElementById('led').scrollIntoView({behavior:'smooth'})">
+        <img src="images/tech_led.png" alt="LED Grow Lights"/>
+        <h4>LED Grow Lights</h4>
+        <p style="font-size:0.88rem;">Full-spectrum programmable lighting systems</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TECH FEATURES -->
+<section class="section section-alt">
+  <div class="container">
+
+    <!-- IoT -->
+    <div class="tech-feature" id="iot">
+      <div class="reveal">
+        <div class="section-label">01 — IoT Monitoring</div>
+        <h2 class="section-title">Your Farm, <span class="text-gradient">Always Visible</span></h2>
+        <p style="margin-bottom:2rem;">A dense network of wireless sensors streams data from every growing zone directly to your dashboard — accessible from any device, anywhere in the world. Get instant alerts before problems become losses.</p>
+        <div class="tech-spec">
+          <img src="images/tech_iot.png" alt="" class="tech-spec-icon"/>
+          <div><div class="tech-spec-val">&#177;0.1&deg;C</div><div class="tech-spec-label">Temperature Accuracy</div></div>
+        </div>
+        <div class="tech-spec">
+          <img src="images/tech_iot.png" alt="" class="tech-spec-icon"/>
+          <div><div class="tech-spec-val">5 sec</div><div class="tech-spec-label">Data Refresh Rate</div></div>
+        </div>
+        <div class="tech-spec">
+          <img src="images/tech_iot.png" alt="" class="tech-spec-icon"/>
+          <div><div class="tech-spec-val">99.9%</div><div class="tech-spec-label">System Uptime SLA</div></div>
+        </div>
+        <a href="contact.html" class="btn btn-primary" style="margin-top:2rem;">Get a Demo &rarr;</a>
+      </div>
+      <div class="tech-visual reveal reveal-delay-2">
+        <img src="images/tech_iot.png" alt="IoT farm monitoring dashboard"/>
+      </div>
+    </div>
+
+    <!-- AI -->
+    <div class="tech-feature reverse" id="ai">
+      <div class="reveal">
+        <div class="section-label">02 — AI Crop Optimization</div>
+        <h2 class="section-title">Predict, Adapt, <span class="text-gradient">Optimize</span></h2>
+        <p style="margin-bottom:2rem;">Our proprietary AI models analyze thousands of data points from your farm sensors and crop history to continuously optimize growing conditions. Expect 15&ndash;30% yield improvements within the first 90 days.</p>
+        <div style="display:flex;flex-direction:column;gap:1rem;">
+          <div style="display:flex;align-items:center;gap:1rem;padding:1rem;background:var(--bg-card);border-radius:var(--radius-sm);border:1px solid var(--border-light);">
+            <img src="images/tech_ai.png" alt="Predictive harvest" style="width:44px;height:44px;border-radius:8px;object-fit:cover;flex-shrink:0;"/>
+            <div><div style="font-weight:700;">Predictive Harvest Planning</div><div style="font-size:0.85rem;color:var(--text-muted);">Know exact yield 2 weeks ahead</div></div>
+          </div>
+          <div style="display:flex;align-items:center;gap:1rem;padding:1rem;background:var(--bg-card);border-radius:var(--radius-sm);border:1px solid var(--border-light);">
+            <img src="images/tech_ai.png" alt="Genetic recipe library" style="width:44px;height:44px;border-radius:8px;object-fit:cover;flex-shrink:0;"/>
+            <div><div style="font-weight:700;">Genetic Recipe Library</div><div style="font-size:0.85rem;color:var(--text-muted);">500+ optimized crop growth recipes</div></div>
+          </div>
+          <div style="display:flex;align-items:center;gap:1rem;padding:1rem;background:var(--bg-card);border-radius:var(--radius-sm);border:1px solid var(--border-light);">
+            <img src="images/tech_automation.png" alt="Auto-adjustment" style="width:44px;height:44px;border-radius:8px;object-fit:cover;flex-shrink:0;"/>
+            <div><div style="font-weight:700;">Auto-Adjustment Engine</div><div style="font-size:0.85rem;color:var(--text-muted);">Real-time parameter auto-correction</div></div>
+          </div>
+        </div>
+        <a href="contact.html" class="btn btn-primary" style="margin-top:2rem;">Learn More &rarr;</a>
+      </div>
+      <div class="tech-visual reveal reveal-delay-2">
+        <img src="images/tech_ai.png" alt="AI crop optimization"/>
+      </div>
+    </div>
+
+    <!-- Climate -->
+    <div class="tech-feature" id="climate">
+      <div class="reveal">
+        <div class="section-label">03 — Climate Control</div>
+        <h2 class="section-title">Perfect Conditions, <span class="text-gradient">Every Day</span></h2>
+        <p style="margin-bottom:2rem;">Integrated HVAC, humidity management, and CO&sub2; enrichment systems work in concert to maintain the ideal microclimate for each crop variety — automatically adapting throughout the day and season.</p>
+        <div class="grid-2" style="gap:1rem;">
+          <div style="text-align:center;padding:1.5rem;background:var(--bg-card);border-radius:var(--radius-sm);border:1px solid var(--border-light);">
+            <div style="font-size:1.8rem;font-weight:800;color:var(--primary);">18&ndash;28&deg;C</div>
+            <div style="font-size:0.82rem;color:var(--text-muted);">Temperature Range</div>
+          </div>
+          <div style="text-align:center;padding:1.5rem;background:var(--bg-card);border-radius:var(--radius-sm);border:1px solid var(--border-light);">
+            <div style="font-size:1.8rem;font-weight:800;color:var(--primary);">60&ndash;85%</div>
+            <div style="font-size:0.82rem;color:var(--text-muted);">Humidity Control</div>
+          </div>
+          <div style="text-align:center;padding:1.5rem;background:var(--bg-card);border-radius:var(--radius-sm);border:1px solid var(--border-light);">
+            <div style="font-size:1.8rem;font-weight:800;color:var(--primary);">800&ndash;1500</div>
+            <div style="font-size:0.82rem;color:var(--text-muted);">CO&sub2; ppm Range</div>
+          </div>
+          <div style="text-align:center;padding:1.5rem;background:var(--bg-card);border-radius:var(--radius-sm);border:1px solid var(--border-light);">
+            <div style="font-size:1.8rem;font-weight:800;color:var(--primary);">&#177;2%</div>
+            <div style="font-size:0.82rem;color:var(--text-muted);">Humidity Accuracy</div>
+          </div>
+        </div>
+        <a href="contact.html" class="btn btn-primary" style="margin-top:2rem;">Get Specs &rarr;</a>
+      </div>
+      <div class="tech-visual reveal reveal-delay-2">
+        <img src="images/tech_climate.png" alt="Climate control HVAC system"/>
+      </div>
+    </div>
+
+    <!-- LED -->
+    <div class="tech-feature reverse" id="led">
+      <div class="reveal">
+        <div class="section-label">04 — LED Grow Lighting</div>
+        <h2 class="section-title">Full-Spectrum <span class="text-gradient">Precision Light</span></h2>
+        <p style="margin-bottom:2rem;">Our programmable LED panels deliver the exact light spectrum, intensity, and photoperiod required for each crop at every growth stage. Up to 50% more energy-efficient than HPS alternatives.</p>
+        <div class="tech-spec">
+          <img src="images/product_led.png" alt="" class="tech-spec-icon"/>
+          <div><div class="tech-spec-val">2.6 &micro;mol/J</div><div class="tech-spec-label">Photon Efficacy (PPE)</div></div>
+        </div>
+        <div class="tech-spec">
+          <img src="images/product_led.png" alt="" class="tech-spec-icon"/>
+          <div><div class="tech-spec-val">380&ndash;780nm</div><div class="tech-spec-label">Full Light Spectrum</div></div>
+        </div>
+        <div class="tech-spec">
+          <img src="images/product_led.png" alt="" class="tech-spec-icon"/>
+          <div><div class="tech-spec-val">50,000hr</div><div class="tech-spec-label">Rated Lifespan</div></div>
+        </div>
+        <a href="products.html" class="btn btn-primary" style="margin-top:2rem;">View Products &rarr;</a>
+      </div>
+      <div class="tech-visual reveal reveal-delay-2">
+        <img src="images/tech_led.png" alt="LED grow lighting over plants"/>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- STATS -->
+<section class="section">
+  <div class="container">
+    <div class="text-center reveal" style="margin-bottom:3rem;">
+      <div class="section-label">Technology Edge</div>
+      <h2 class="section-title">Proven <span class="text-gradient">Performance</span></h2>
+    </div>
+    <div class="grid-4">
+      <div class="stat-card reveal reveal-delay-1"><div class="stat-number" data-counter="500" data-suffix="+">0+</div><div class="stat-label">Crop Growth Recipes</div></div>
+      <div class="stat-card reveal reveal-delay-2"><div class="stat-number" data-counter="99" data-suffix=".9%">0%</div><div class="stat-label">System Uptime SLA</div></div>
+      <div class="stat-card reveal reveal-delay-3"><div class="stat-number" data-counter="50" data-suffix="%">0%</div><div class="stat-label">More Energy Efficient</div></div>
+      <div class="stat-card reveal reveal-delay-4"><div class="stat-number" data-counter="30" data-suffix="%">0%</div><div class="stat-label">Yield Boost from AI</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="section section-alt">
+  <div class="container">
+    <div class="cta-banner reveal">
+      <h2>See the Technology <span style="color:var(--accent2)">in Action</span></h2>
+      <p>Book a live demo and watch our farm dashboard manage a real growing operation in real time.</p>
+      <div class="cta-btns">
+        <a href="contact.html" class="btn btn-gold btn-lg">Book Live Demo</a>
+        <a href="products.html" class="btn btn-light btn-lg">View Products</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <div class="footer-logo"><img src="images/logo_leaf.png" alt="" style="width:26px;height:26px;object-fit:cover;border-radius:5px;"/> Hydro<span>Farm</span> Pro</div>
+        <p>The world's leading B2B hydroponic vertical farm solutions provider.</p>
+        <div class="social-links" style="margin-top:1.5rem;"><a href="#" class="social-link">Li</a><a href="#" class="social-link">Tw</a><a href="#" class="social-link">YT</a><a href="#" class="social-link">Fb</a></div>
+      </div>
+      <div><div class="footer-heading">Solutions</div><ul class="footer-links"><li><a href="services.html">Turnkey Setup</a></li><li><a href="services.html">Smart Automation</a></li><li><a href="technology.html">Technology</a></li><li><a href="products.html">Products</a></li></ul></div>
+      <div><div class="footer-heading">Company</div><ul class="footer-links"><li><a href="about.html">About Us</a></li><li><a href="contact.html">Contact</a></li><li><a href="dashboard.html">B2B Portal</a></li></ul></div>
+      <div><div class="footer-heading">Get In Touch</div><ul class="footer-contact"><li><span>&#8962;</span><span>42 Green Tower, Dubai, UAE</span></li><li><span>&#128222;</span><span>+971 4 000 0000</span></li><li><span>&#9993;</span><span>info@hydrofarm.pro</span></li></ul></div>
+    </div>
+    <div class="footer-bottom"><span>&copy; 2026 HydroFarm Pro. All rights reserved.</span><span>Sustainable Farming</span></div>
+  </div>
+</footer>
+<a href="#" class="back-to-top" id="back-to-top">&#8679;</a>
+<script src="js/main.js"></script>
+</body>
+</html>

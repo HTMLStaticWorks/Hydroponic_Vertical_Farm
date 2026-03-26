@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>HydroFarm Pro — Contact &amp; Sales</title>
+  <meta name="description" content="Contact HydroFarm Pro — book a demo, request a quote, or reach our sales team."/>
+  <link rel="stylesheet" href="css/style.css"/>
+  <link rel="stylesheet" href="css/nav.css"/>
+  <style>
+    .contact-grid { display:grid; grid-template-columns:1fr 1.6fr; gap:4rem; align-items:start; }
+    @media(max-width:900px) { .contact-grid { grid-template-columns:1fr; } }
+    .contact-info-card { background:var(--bg-card); border-radius:var(--radius-lg); padding:2.5rem; border:1px solid var(--border-light); box-shadow:var(--shadow-card); margin-bottom:1.5rem; }
+    .contact-detail { display:flex; align-items:flex-start; gap:1.1rem; padding:1rem 0; border-bottom:1px solid var(--border-light); }
+    .contact-detail:last-child { border-bottom:none; }
+    .contact-icon { width:42px; height:42px; border-radius:10px; object-fit:cover; flex-shrink:0; }
+    .contact-val { font-weight:600; font-size:0.97rem; }
+    .contact-sub { font-size:0.83rem; color:var(--text-muted); margin-top:0.2rem; }
+    .office-card { background:var(--bg-card); border:1px solid var(--border-light); border-radius:var(--radius); padding:1.5rem; display:flex; gap:1rem; align-items:flex-start; }
+    .office-flag { width:38px; height:38px; border-radius:8px; object-fit:cover; flex-shrink:0; }
+    .form-card { background:var(--bg-card); border-radius:var(--radius-lg); padding:2.5rem; border:1px solid var(--border-light); box-shadow:var(--shadow-card); }
+    .form-card-tabs { display:flex; gap:0; border-bottom:2px solid var(--border); margin-bottom:2rem; }
+    .form-card-tab { padding:0.8rem 1.5rem; font-weight:700; font-size:0.92rem; color:var(--text-muted); border-bottom:2px solid transparent; margin-bottom:-2px; cursor:pointer; transition:all 0.2s; background:none; }
+    .form-card-tab.active { color:var(--primary); border-color:var(--primary); }
+    [data-theme="dark"] .form-card-tab.active { color:var(--accent); border-color:var(--accent); }
+    .map-placeholder { background:linear-gradient(135deg,var(--bg-alt),var(--bg-card)); border-radius:var(--radius); height:220px; display:flex; align-items:center; justify-content:center; border:1px solid var(--border-light); overflow:hidden; }
+    .map-placeholder img { width:100%; height:100%; object-fit:cover; opacity:0.8; }
+    .cta-card-img { width:100%; height:100px; object-fit:cover; border-radius:12px; margin-bottom:1rem; }
+  </style>
+</head>
+<body>
+<!-- NAV -->
+<nav class="site-nav" id="site-nav">
+  <div class="nav-inner">
+    <a href="index.html" class="nav-logo"><div class="logo-icon"><img src="images/logo_leaf.png" alt="" style="width:28px;height:28px;object-fit:cover;border-radius:6px;"/></div><span class="logo-text">Hydro<span>Farm</span> Pro</span></a>
+    <div class="nav-links"><a href="index.html" class="nav-link">Home</a><a href="home2.html" class="nav-link">Home 2</a><a href="technology.html" class="nav-link">Technology</a><a href="services.html" class="nav-link">Services</a><a href="products.html" class="nav-link">Products</a><a href="dashboard.html" class="nav-link">Dashboard</a><a href="about.html" class="nav-link">About</a><a href="contact.html" class="nav-link">Contact</a></div>
+    <div class="nav-actions"><button class="icon-btn" data-theme-toggle>&#9681;</button><button class="icon-btn" data-rtl-toggle id="rtl-label">RTL</button><a href="signup.html" class="nav-link nav-signup-btn">Sign Up</a><button class="hamburger" id="hamburger"><span class="hamburger-line"></span><span class="hamburger-line"></span><span class="hamburger-line"></span></button></div>
+  </div>
+</nav>
+<div class="nav-overlay" id="nav-overlay"></div>
+<div class="mobile-menu" id="mobile-menu">
+  <div class="mobile-menu-header"><a href="index.html" class="nav-logo"><div class="logo-icon"><img src="images/logo_leaf.png" alt="" style="width:24px;height:24px;object-fit:cover;border-radius:5px;"/></div><span class="logo-text">Hydro<span>Farm</span> Pro</span></a><button class="mobile-close" id="mobile-close">&#10005;</button></div>
+  <nav class="mobile-nav-links"><a href="index.html">Home</a><a href="home2.html">Home 2</a><a href="technology.html">Technology</a><a href="services.html">Services</a><a href="products.html">Products</a><a href="dashboard.html">Dashboard</a><a href="about.html">About</a><a href="contact.html">Contact</a></nav>
+  <div class="mobile-toggles"><button class="icon-btn" data-theme-toggle>&#9681;</button><button class="icon-btn" data-rtl-toggle>RTL</button></div>
+  <div class="mobile-actions"><a href="signup.html" class="btn btn-primary">Sign Up Free</a><a href="contact.html" class="btn btn-outline">Get a Quote</a></div>
+</div>
+
+<!-- PAGE HERO -->
+<section class="page-hero">
+  <div class="container">
+    <nav class="breadcrumb"><a href="index.html">Home</a><span>/</span><span style="color:#fff;">Contact</span></nav>
+    <h1>Let's <span style="color:var(--accent2)">Talk Business</span></h1>
+    <p>Our sales and technical team is ready to help you design, quote, and launch your vertical farm.</p>
+  </div>
+</section>
+
+<!-- CTA CARDS -->
+<section class="section">
+  <div class="container">
+    <div class="grid-3" style="margin-bottom:4rem;">
+      <div class="card reveal reveal-delay-1" style="text-align:center;">
+        <img src="images/tech_iot.png" alt="Request a demo" class="cta-card-img"/>
+        <h3>Request a Demo</h3>
+        <p>Get a live walkthrough of our IoT dashboard and watch a real farm operation in action.</p>
+        <a href="#contact-form" class="btn btn-primary" style="margin-top:1.5rem;">Book Demo</a>
+      </div>
+      <div class="card reveal reveal-delay-2" style="text-align:center;">
+        <img src="images/service_turnkey.png" alt="Get a quote" class="cta-card-img"/>
+        <h3>Get a Quote</h3>
+        <p>Tell us your space, crop targets, and budget — we'll send a detailed ROI proposal within 48 hours.</p>
+        <a href="#contact-form" class="btn btn-primary" style="margin-top:1.5rem;">Get Quote</a>
+      </div>
+      <div class="card reveal reveal-delay-3" style="text-align:center;">
+        <img src="images/about_team.png" alt="Talk to an expert" class="cta-card-img"/>
+        <h3>Talk to an Expert</h3>
+        <p>Speak directly with a senior agronomist or engineer for technical advice on your project.</p>
+        <a href="tel:+97140000000" class="btn btn-primary" style="margin-top:1.5rem;">Call Now</a>
+      </div>
+    </div>
+
+    <div class="contact-grid reveal">
+      <!-- Info -->
+      <div>
+        <div class="contact-info-card">
+          <h3 style="margin-bottom:1.5rem;">Contact Information</h3>
+          <div class="contact-detail">
+            <img src="images/logo_leaf.png" alt="" class="contact-icon"/>
+            <div><div class="contact-val">+971 4 000 0000</div><div class="contact-sub">Sales — Mon–Sat, 9AM–6PM GST</div></div>
+          </div>
+          <div class="contact-detail">
+            <img src="images/logo_leaf.png" alt="" class="contact-icon"/>
+            <div><div class="contact-val">info@hydrofarm.pro</div><div class="contact-sub">General inquiries — reply within 24hrs</div></div>
+          </div>
+          <div class="contact-detail">
+            <img src="images/logo_leaf.png" alt="" class="contact-icon"/>
+            <div><div class="contact-val">sales@hydrofarm.pro</div><div class="contact-sub">B2B sales &amp; enterprise partnerships</div></div>
+          </div>
+          <div class="contact-detail">
+            <img src="images/tech_iot.png" alt="" class="contact-icon"/>
+            <div><div class="contact-val">support@hydrofarm.pro</div><div class="contact-sub">Technical support for existing clients</div></div>
+          </div>
+        </div>
+
+        <div class="map-placeholder">
+          <img src="images/about_sustainability.png" alt="Map — 42 Green Tower, Business Bay, Dubai"/>
+        </div>
+
+        <div style="margin-top:1.5rem;display:flex;flex-direction:column;gap:1rem;">
+          <div class="office-card">
+            <img src="images/logo_leaf.png" alt="Dubai" class="office-flag"/>
+            <div><h4 style="margin-bottom:0.2rem;">Dubai HQ</h4><p style="font-size:0.85rem;color:var(--text-muted);">42 Green Tower, Business Bay — +971 4 000 0000</p></div>
+          </div>
+          <div class="office-card">
+            <img src="images/logo_leaf.png" alt="Riyadh" class="office-flag"/>
+            <div><h4 style="margin-bottom:0.2rem;">Riyadh Office</h4><p style="font-size:0.85rem;color:var(--text-muted);">King Fahad Road, Al Olaya — +966 11 000 0000</p></div>
+          </div>
+          <div class="office-card">
+            <img src="images/logo_leaf.png" alt="London" class="office-flag"/>
+            <div><h4 style="margin-bottom:0.2rem;">London Office</h4><p style="font-size:0.85rem;color:var(--text-muted);">Canary Wharf, London E14 — +44 20 0000 0000</p></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Contact Form -->
+      <div class="form-card" id="contact-form">
+        <div class="form-card-tabs">
+          <button class="form-card-tab active" onclick="switchTab(this,'quote-form')">Get a Quote</button>
+          <button class="form-card-tab" onclick="switchTab(this,'demo-form')">Book Demo</button>
+        </div>
+        <div id="quote-form">
+          <form data-validate>
+            <div class="grid-2">
+              <div class="form-group"><label class="form-label">Full Name *</label><input type="text" class="form-control" placeholder="Your name" required/></div>
+              <div class="form-group"><label class="form-label">Company *</label><input type="text" class="form-control" placeholder="Your company" required/></div>
+              <div class="form-group"><label class="form-label">Email *</label><input type="email" class="form-control" placeholder="you@company.com" required/></div>
+              <div class="form-group"><label class="form-label">Phone</label><input type="tel" class="form-control" placeholder="+971 xx xxx xxxx"/></div>
+              <div class="form-group"><label class="form-label">Business Type *</label>
+                <select class="form-control" required><option value="">Select type...</option><option>Restaurant / Hotel</option><option>Supermarket / Retail</option><option>Export Business</option><option>Agri Startup</option><option>Government / NGO</option><option>Other</option></select></div>
+              <div class="form-group"><label class="form-label">Available Space</label>
+                <select class="form-control"><option value="">Select range...</option><option>Under 100 sqm</option><option>100–500 sqm</option><option>500–2000 sqm</option><option>2000+ sqm</option></select></div>
+            </div>
+            <div class="form-group"><label class="form-label">Project Description *</label><textarea class="form-control" placeholder="Describe your goals, crops of interest, timeline..." required></textarea></div>
+            <div class="form-group"><label class="form-label">Budget</label>
+              <select class="form-control"><option value="">Select range...</option><option>Under $50K</option><option>$50K – $200K</option><option>$200K – $500K</option><option>$500K – $1M</option><option>$1M+</option></select></div>
+            <button type="submit" class="btn btn-primary btn-lg" style="width:100%;justify-content:center;">Send Quote Request</button>
+          </form>
+        </div>
+        <div id="demo-form" style="display:none;">
+          <form data-validate>
+            <div class="grid-2">
+              <div class="form-group"><label class="form-label">Full Name *</label><input type="text" class="form-control" placeholder="Your name" required/></div>
+              <div class="form-group"><label class="form-label">Email *</label><input type="email" class="form-control" placeholder="you@company.com" required/></div>
+              <div class="form-group"><label class="form-label">Phone *</label><input type="tel" class="form-control" placeholder="+971 xx xxx xxxx" required/></div>
+              <div class="form-group"><label class="form-label">Preferred Date</label><input type="date" class="form-control"/></div>
+            </div>
+            <div class="form-group"><label class="form-label">Demo Type *</label>
+              <select class="form-control" required><option value="">Select...</option><option>Online Video Call</option><option>On-site Farm Visit (Dubai)</option><option>On-site Farm Visit (Other City)</option></select></div>
+            <div class="form-group"><label class="form-label">What would you like to see?</label><textarea class="form-control" placeholder="e.g. IoT dashboard, crop systems, ROI walkthrough..."></textarea></div>
+            <button type="submit" class="btn btn-gold btn-lg" style="width:100%;justify-content:center;">Book My Demo</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand"><div class="footer-logo"><img src="images/logo_leaf.png" alt="" style="width:26px;height:26px;object-fit:cover;border-radius:5px;"/> Hydro<span>Farm</span> Pro</div><p>The world's leading B2B hydroponic vertical farm solutions provider.</p><div class="social-links" style="margin-top:1.5rem;"><a href="#" class="social-link">Li</a><a href="#" class="social-link">Tw</a><a href="#" class="social-link">YT</a><a href="#" class="social-link">Fb</a></div></div>
+      <div><div class="footer-heading">Solutions</div><ul class="footer-links"><li><a href="services.html">Services</a></li><li><a href="technology.html">Technology</a></li><li><a href="products.html">Products</a></li></ul></div>
+      <div><div class="footer-heading">Company</div><ul class="footer-links"><li><a href="about.html">About Us</a></li><li><a href="contact.html">Contact</a></li><li><a href="dashboard.html">B2B Portal</a></li></ul></div>
+      <div><div class="footer-heading">Get In Touch</div><ul class="footer-contact"><li><span>&#8962;</span><span>42 Green Tower, Dubai, UAE</span></li><li><span>&#128222;</span><span>+971 4 000 0000</span></li><li><span>&#9993;</span><span>info@hydrofarm.pro</span></li></ul></div>
+    </div>
+    <div class="footer-bottom"><span>&copy; 2026 HydroFarm Pro. All rights reserved.</span><span>Sustainable Farming</span></div>
+  </div>
+</footer>
+<a href="#" class="back-to-top" id="back-to-top">&#8679;</a>
+<script src="js/main.js"></script>
+<script>
+function switchTab(btn, targetId) {
+  document.querySelectorAll('.form-card-tab').forEach(t => t.classList.remove('active'));
+  btn.classList.add('active');
+  document.getElementById('quote-form').style.display = targetId === 'quote-form' ? 'block' : 'none';
+  document.getElementById('demo-form').style.display = targetId === 'demo-form' ? 'block' : 'none';
+}
+</script>
+</body>
+</html>

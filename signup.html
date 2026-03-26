@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>HydroFarm Pro — Sign Up / Login</title>
+  <meta name="description" content="Create your HydroFarm Pro B2B account or sign in to access your farm dashboard."/>
+  <link rel="stylesheet" href="css/style.css"/>
+  <link rel="stylesheet" href="css/nav.css"/>
+  <style>
+    .auth-page { min-height:100vh; display:grid; grid-template-columns:1fr 1fr; padding-top:var(--nav-height); }
+    @media(max-width:900px) { .auth-page { grid-template-columns:1fr; } }
+    .auth-left { position:relative; display:flex; flex-direction:column; justify-content:center; overflow:hidden; }
+    .auth-left-img { position:absolute; inset:0; }
+    .auth-left-img img { width:100%; height:100%; object-fit:cover; }
+    .auth-left-img::after { content:''; position:absolute; inset:0; background:linear-gradient(135deg,rgba(5,26,16,0.88) 30%,rgba(0,0,0,0.5)); }
+    .auth-left-content { position:relative; z-index:2; padding:3rem; }
+    .auth-left h2 { color:#fff; font-size:clamp(1.6rem,3vw,2.5rem); margin-bottom:1rem; }
+    .auth-left p { color:rgba(255,255,255,0.72); font-size:1rem; margin-bottom:2rem; }
+    .auth-benefit { display:flex; align-items:center; gap:1rem; margin-bottom:1.2rem; }
+    .auth-benefit-icon { width:40px; height:40px; border-radius:10px; object-fit:cover; flex-shrink:0; border:1px solid rgba(82,183,136,0.4); }
+    .auth-benefit-text { color:rgba(255,255,255,0.85); font-size:0.92rem; }
+    @media(max-width:900px) { .auth-left { display:none; } }
+    .auth-right { display:flex; align-items:center; justify-content:center; padding:3rem 2rem; background:var(--bg); }
+    .auth-box { width:100%; max-width:460px; }
+    .auth-tabs { display:flex; gap:0; margin-bottom:2.5rem; border-bottom:2px solid var(--border); }
+    .auth-tab-btn { flex:1; padding:1em; font-weight:700; font-size:1rem; color:var(--text-muted); border-bottom:2px solid transparent; margin-bottom:-2px; cursor:pointer; background:none; transition:all 0.2s; border-radius:0; }
+    .auth-tab-btn.active { color:var(--primary); border-color:var(--primary); }
+    [data-theme="dark"] .auth-tab-btn.active { color:var(--accent); border-color:var(--accent); }
+    .auth-tab-panel { display:none; }
+    .auth-tab-panel.active { display:block; }
+    .divider-or { text-align:center; position:relative; margin:1.5rem 0; }
+    .divider-or::before, .divider-or::after { content:''; position:absolute; top:50%; width:45%; height:1px; background:var(--border); }
+    .divider-or::before { left:0; } .divider-or::after { right:0; }
+    .divider-or span { background:var(--bg); padding:0 0.8rem; color:var(--text-muted); font-size:0.85rem; }
+    .social-signin-btn { display:flex; align-items:center; justify-content:center; gap:0.8rem; width:100%; padding:0.8em 1.5em; border:1.5px solid var(--border); border-radius:var(--radius-sm); font-weight:600; cursor:pointer; transition:all 0.2s; background:var(--bg-card); color:var(--text-primary); margin-bottom:0.8rem; }
+    .social-signin-btn img { width:22px; height:22px; object-fit:cover; border-radius:4px; }
+    .social-signin-btn:hover { border-color:var(--accent); background:var(--bg-alt); }
+    .password-strength { height:4px; border-radius:2px; background:var(--border); margin-top:0.5rem; overflow:hidden; }
+    .password-fill { height:100%; border-radius:2px; width:0%; transition:width 0.3s,background 0.3s; }
+    .checkbox-row { display:flex; align-items:flex-start; gap:0.8rem; }
+    .checkbox-row input { margin-top:3px; accent-color:var(--primary); width:16px; height:16px; flex-shrink:0; }
+    .auth-footer-text { text-align:center; font-size:0.88rem; color:var(--text-muted); margin-top:1.5rem; }
+    .auth-footer-text a { color:var(--accent); font-weight:600; }
+  </style>
+</head>
+<body>
+<!-- NAV -->
+<nav class="site-nav" id="site-nav">
+  <div class="nav-inner">
+    <a href="index.html" class="nav-logo"><div class="logo-icon"><img src="images/logo_leaf.png" alt="" style="width:28px;height:28px;object-fit:cover;border-radius:6px;"/></div><span class="logo-text">Hydro<span>Farm</span> Pro</span></a>
+    <div class="nav-links"><a href="index.html" class="nav-link">Home</a><a href="home2.html" class="nav-link">Home 2</a><a href="technology.html" class="nav-link">Technology</a><a href="services.html" class="nav-link">Services</a><a href="products.html" class="nav-link">Products</a><a href="dashboard.html" class="nav-link">Dashboard</a><a href="about.html" class="nav-link">About</a><a href="contact.html" class="nav-link">Contact</a></div>
+    <div class="nav-actions"><button class="icon-btn" data-theme-toggle>&#9681;</button><button class="icon-btn" data-rtl-toggle id="rtl-label">RTL</button><a href="signup.html" class="nav-link nav-signup-btn">Sign Up</a><button class="hamburger" id="hamburger"><span class="hamburger-line"></span><span class="hamburger-line"></span><span class="hamburger-line"></span></button></div>
+  </div>
+</nav>
+<div class="nav-overlay" id="nav-overlay"></div>
+<div class="mobile-menu" id="mobile-menu">
+  <div class="mobile-menu-header"><a href="index.html" class="nav-logo"><div class="logo-icon"><img src="images/logo_leaf.png" alt="" style="width:24px;height:24px;object-fit:cover;border-radius:5px;"/></div><span class="logo-text">Hydro<span>Farm</span> Pro</span></a><button class="mobile-close" id="mobile-close">&#10005;</button></div>
+  <nav class="mobile-nav-links"><a href="index.html">Home</a><a href="home2.html">Home 2</a><a href="technology.html">Technology</a><a href="services.html">Services</a><a href="products.html">Products</a><a href="dashboard.html">Dashboard</a><a href="about.html">About</a><a href="contact.html">Contact</a></nav>
+  <div class="mobile-toggles"><button class="icon-btn" data-theme-toggle>&#9681;</button><button class="icon-btn" data-rtl-toggle>RTL</button></div>
+  <div class="mobile-actions"><a href="signup.html" class="btn btn-primary">Sign Up Free</a></div>
+</div>
+
+<!-- AUTH PAGE -->
+<div class="auth-page">
+  <!-- Left visual panel -->
+  <div class="auth-left">
+    <div class="auth-left-img">
+      <img src="images/hero_vertical_farm.png" alt="Hydroponic vertical farm"/>
+    </div>
+    <div class="auth-left-content">
+      <div class="hero-badge" style="margin-bottom:1.5rem;">B2B Portal Access</div>
+      <h2>Grow Smarter with <span style="color:var(--accent)">HydroFarm Pro</span></h2>
+      <p>Access your farm dashboard, manage orders, track analytics, and control operations 24/7.</p>
+      <div class="auth-benefit">
+        <img src="images/tech_iot.png" alt="Analytics dashboard" class="auth-benefit-icon"/>
+        <div class="auth-benefit-text">Real-time farm analytics dashboard</div>
+      </div>
+      <div class="auth-benefit">
+        <img src="images/product_tower.png" alt="Order equipment" class="auth-benefit-icon"/>
+        <div class="auth-benefit-text">Order equipment and nutrients online</div>
+      </div>
+      <div class="auth-benefit">
+        <img src="images/about_team.png" alt="Training resources" class="auth-benefit-icon"/>
+        <div class="auth-benefit-text">Access training resources and grow recipes</div>
+      </div>
+      <div class="auth-benefit">
+        <img src="images/logo_leaf.png" alt="24/7 support" class="auth-benefit-icon"/>
+        <div class="auth-benefit-text">24/7 priority technical support</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Right form panel -->
+  <div class="auth-right">
+    <div class="auth-box">
+      <div style="text-align:center;margin-bottom:2rem;">
+        <a href="index.html" class="nav-logo" style="justify-content:center;font-size:1.5rem;">
+          <div class="logo-icon" style="width:44px;height:44px;"><img src="images/logo_leaf.png" alt="" style="width:36px;height:36px;object-fit:cover;border-radius:8px;"/></div>
+          <span class="logo-text">Hydro<span>Farm</span> Pro</span>
+        </a>
+      </div>
+
+      <div class="auth-tabs">
+        <button class="auth-tab-btn active" id="login-tab-btn" onclick="switchAuthTab('login')">Sign In</button>
+        <button class="auth-tab-btn" id="register-tab-btn" onclick="switchAuthTab('register')">Create Account</button>
+      </div>
+
+      <!-- LOGIN -->
+      <div class="auth-tab-panel active" id="login-panel">
+        <button class="social-signin-btn">
+          <img src="images/logo_leaf.png" alt="Google"/>
+          Continue with Google
+        </button>
+        <button class="social-signin-btn">
+          <img src="images/logo_leaf.png" alt="LinkedIn"/>
+          Continue with LinkedIn
+        </button>
+        <div class="divider-or"><span>or sign in with email</span></div>
+        <form data-validate>
+          <div class="form-group"><label class="form-label">Email Address *</label><input type="email" class="form-control" placeholder="you@company.com" required/></div>
+          <div class="form-group">
+            <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:0.5rem;"><label class="form-label" style="margin:0;">Password *</label><a href="#" style="font-size:0.83rem;color:var(--accent);font-weight:600;">Forgot password?</a></div>
+            <input type="password" class="form-control" placeholder="&bull;&bull;&bull;&bull;&bull;&bull;&bull;&bull;" required/>
+          </div>
+          <div class="checkbox-row" style="margin-bottom:1.5rem;">
+            <input type="checkbox" id="remember-me"/>
+            <label for="remember-me" style="font-size:0.9rem;color:var(--text-secondary);">Remember me for 30 days</label>
+          </div>
+          <button type="submit" class="btn btn-primary btn-lg" style="width:100%;justify-content:center;" onclick="window.location.href='dashboard.html';return false;">Sign In to Dashboard</button>
+        </form>
+        <div class="auth-footer-text">No account? <a href="#" onclick="switchAuthTab('register');return false;">Create one free &rarr;</a></div>
+      </div>
+
+      <!-- REGISTER -->
+      <div class="auth-tab-panel" id="register-panel">
+        <button class="social-signin-btn">
+          <img src="images/logo_leaf.png" alt="Google"/>
+          Sign up with Google
+        </button>
+        <div class="divider-or"><span>or register with email</span></div>
+        <form data-validate>
+          <div class="grid-2">
+            <div class="form-group"><label class="form-label">First Name *</label><input type="text" class="form-control" placeholder="First name" required/></div>
+            <div class="form-group"><label class="form-label">Last Name *</label><input type="text" class="form-control" placeholder="Last name" required/></div>
+          </div>
+          <div class="form-group"><label class="form-label">Business Email *</label><input type="email" class="form-control" placeholder="you@company.com" required/></div>
+          <div class="form-group"><label class="form-label">Company Name *</label><input type="text" class="form-control" placeholder="Your company" required/></div>
+          <div class="form-group"><label class="form-label">Business Type *</label>
+            <select class="form-control" required><option value="">Select type...</option><option>Restaurant / Hotel</option><option>Supermarket / Retail</option><option>Export Business</option><option>Agri Startup</option><option>Government / NGO</option><option>Other</option></select></div>
+          <div class="form-group">
+            <label class="form-label">Password *</label>
+            <input type="password" class="form-control" placeholder="Min 8 characters" required id="reg-password" oninput="updateStrength(this.value)"/>
+            <div class="password-strength"><div class="password-fill" id="strength-fill"></div></div>
+            <div style="font-size:0.78rem;color:var(--text-muted);margin-top:0.3rem;" id="strength-label">Enter a password</div>
+          </div>
+          <div class="checkbox-row" style="margin-bottom:1.5rem;">
+            <input type="checkbox" id="terms" required/>
+            <label for="terms" style="font-size:0.88rem;color:var(--text-secondary);">I agree to the <a href="#" style="color:var(--accent);">Terms</a> and <a href="#" style="color:var(--accent);">Privacy Policy</a></label>
+          </div>
+          <button type="submit" class="btn btn-primary btn-lg" style="width:100%;justify-content:center;" onclick="window.location.href='dashboard.html';return false;">Create Free Account</button>
+        </form>
+        <div class="auth-footer-text">Already registered? <a href="#" onclick="switchAuthTab('login');return false;">Sign in &rarr;</a></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script src="js/main.js"></script>
+<script>
+function switchAuthTab(tab) {
+  document.getElementById('login-panel').classList.toggle('active', tab === 'login');
+  document.getElementById('register-panel').classList.toggle('active', tab === 'register');
+  document.getElementById('login-tab-btn').classList.toggle('active', tab === 'login');
+  document.getElementById('register-tab-btn').classList.toggle('active', tab === 'register');
+}
+function updateStrength(val) {
+  const fill = document.getElementById('strength-fill');
+  const label = document.getElementById('strength-label');
+  let s = 0;
+  if (val.length >= 8) s++;
+  if (/[A-Z]/.test(val)) s++;
+  if (/[0-9]/.test(val)) s++;
+  if (/[^A-Za-z0-9]/.test(val)) s++;
+  const colors = ['#ef4444','#f97316','#eab308','#22c55e'];
+  const labels = ['Weak','Fair','Good','Strong'];
+  if (!val.length) { fill.style.width='0'; label.textContent='Enter a password'; return; }
+  const i = Math.max(0, s - 1);
+  fill.style.width = (i+1)*25 + '%';
+  fill.style.background = colors[i];
+  label.textContent = 'Strength: ' + labels[i];
+}
+</script>
+</body>
+</html>

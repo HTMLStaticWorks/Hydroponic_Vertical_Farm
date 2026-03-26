@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>HydroFarm Pro — Services &amp; Solutions</title>
+  <meta name="description" content="Turnkey vertical farming setup, installation, smart automation, and consulting services for B2B clients."/>
+  <link rel="stylesheet" href="css/style.css"/>
+  <link rel="stylesheet" href="css/nav.css"/>
+  <style>
+    .service-img { width:100%; height:200px; object-fit:cover; border-radius:14px; margin-bottom:1.5rem; }
+    .check-list { margin:1.5rem 0; display:flex; flex-direction:column; gap:0.7rem; }
+    .check-list li { display:flex; align-items:center; gap:0.7rem; color:var(--text-secondary); font-size:0.93rem; }
+    .check-list li::before { content:''; display:block; width:18px; height:18px; background:url('images/logo_leaf.png') center/cover no-repeat; border-radius:50%; flex-shrink:0; }
+  </style>
+</head>
+<body>
+<!-- NAV -->
+<nav class="site-nav" id="site-nav">
+  <div class="nav-inner">
+    <a href="index.html" class="nav-logo"><div class="logo-icon"><img src="images/logo_leaf.png" alt="" style="width:28px;height:28px;object-fit:cover;border-radius:6px;"/></div><span class="logo-text">Hydro<span>Farm</span> Pro</span></a>
+    <div class="nav-links">
+      <a href="index.html" class="nav-link">Home</a><a href="home2.html" class="nav-link">Home 2</a><a href="technology.html" class="nav-link">Technology</a><a href="services.html" class="nav-link">Services</a><a href="products.html" class="nav-link">Products</a><a href="dashboard.html" class="nav-link">Dashboard</a><a href="about.html" class="nav-link">About</a><a href="contact.html" class="nav-link">Contact</a>
+    </div>
+    <div class="nav-actions">
+      <button class="icon-btn" data-theme-toggle>&#9681;</button>
+      <button class="icon-btn" data-rtl-toggle id="rtl-label">RTL</button>
+      <a href="signup.html" class="nav-link nav-signup-btn">Sign Up</a>
+      <button class="hamburger" id="hamburger"><span class="hamburger-line"></span><span class="hamburger-line"></span><span class="hamburger-line"></span></button>
+    </div>
+  </div>
+</nav>
+<div class="nav-overlay" id="nav-overlay"></div>
+<div class="mobile-menu" id="mobile-menu">
+  <div class="mobile-menu-header"><a href="index.html" class="nav-logo"><div class="logo-icon"><img src="images/logo_leaf.png" alt="" style="width:24px;height:24px;object-fit:cover;border-radius:5px;"/></div><span class="logo-text">Hydro<span>Farm</span> Pro</span></a><button class="mobile-close" id="mobile-close">&#10005;</button></div>
+  <nav class="mobile-nav-links"><a href="index.html">Home</a><a href="home2.html">Home 2</a><a href="technology.html">Technology</a><a href="services.html">Services</a><a href="products.html">Products</a><a href="dashboard.html">Dashboard</a><a href="about.html">About</a><a href="contact.html">Contact</a></nav>
+  <div class="mobile-toggles"><button class="icon-btn" data-theme-toggle>&#9681;</button><button class="icon-btn" data-rtl-toggle>RTL</button></div>
+  <div class="mobile-actions"><a href="signup.html" class="btn btn-primary">Sign Up Free</a><a href="contact.html" class="btn btn-outline">Get a Quote</a></div>
+</div>
+
+<!-- PAGE HERO -->
+<section class="page-hero">
+  <div class="container">
+    <nav class="breadcrumb"><a href="index.html">Home</a><span>/</span><span style="color:#fff;">Services</span></nav>
+    <h1>End-to-End <span style="color:var(--accent2)">Farm Services</span></h1>
+    <p>From concept to harvest — we manage every step of your vertical farming journey with expert precision.</p>
+  </div>
+</section>
+
+<!-- SERVICES GRID -->
+<section class="section">
+  <div class="container">
+    <div class="grid-2" style="gap:2.5rem;">
+      <div class="card reveal reveal-delay-1" style="padding:2.5rem;">
+        <img src="images/service_turnkey.png" alt="Turnkey vertical farm installation" class="service-img"/>
+        <h3>Turnkey Vertical Farm Setup</h3>
+        <p>We handle everything — from site survey and structural assessment to full system installation and commissioning.</p>
+        <ul class="check-list">
+          <li>Site feasibility study</li>
+          <li>Custom farm architecture design</li>
+          <li>Full equipment procurement</li>
+          <li>Installation &amp; commissioning</li>
+          <li>12-month warranty &amp; support</li>
+        </ul>
+        <a href="contact.html" class="btn btn-primary">Request Quote &rarr;</a>
+      </div>
+      <div class="card reveal reveal-delay-2" style="padding:2.5rem;">
+        <img src="images/hero_farm_overview.png" alt="Hydroponic system installation" class="service-img"/>
+        <h3>Hydroponic System Installation</h3>
+        <p>Whether NFT, DWC, Aeroponics, or Ebb &amp; Flow — our certified engineers install and calibrate the right hydroponic system for your specific crops and space.</p>
+        <ul class="check-list">
+          <li>NFT, DWC, Ebb &amp; Flow, Aeroponics</li>
+          <li>Nutrient dosing system setup</li>
+          <li>Water filtration &amp; recirculation</li>
+          <li>Crop-specific calibration</li>
+          <li>Post-install monitoring</li>
+        </ul>
+        <a href="contact.html" class="btn btn-primary">Request Quote &rarr;</a>
+      </div>
+      <div class="card reveal reveal-delay-1" style="padding:2.5rem;">
+        <img src="images/product_automation.png" alt="Smart farm automation" class="service-img"/>
+        <h3>Smart Farm Automation</h3>
+        <p>Upgrade any existing farm with our automation layer — IoT sensors, AI controllers, automated dosing, and a real-time dashboard.</p>
+        <ul class="check-list">
+          <li>IoT sensor network installation</li>
+          <li>AI-driven parameter control</li>
+          <li>Cloud dashboard &amp; mobile app</li>
+          <li>Automated alerts &amp; reporting</li>
+          <li>Integration with existing systems</li>
+        </ul>
+        <a href="contact.html" class="btn btn-primary">Request Quote &rarr;</a>
+      </div>
+      <div class="card reveal reveal-delay-2" style="padding:2.5rem;">
+        <img src="images/about_team.png" alt="Consulting and training" class="service-img"/>
+        <h3>Consulting &amp; Training</h3>
+        <p>Our agronomists and farm engineers provide hands-on training, operational audits, and ongoing advisory to maximise farm performance.</p>
+        <ul class="check-list">
+          <li>On-site staff training (3–5 days)</li>
+          <li>Monthly agronomist consultations</li>
+          <li>Crop selection &amp; planning</li>
+          <li>ROI optimization strategy</li>
+          <li>Certification preparation</li>
+        </ul>
+        <a href="contact.html" class="btn btn-primary">Request Consultation &rarr;</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PRICING -->
+<section class="section section-alt">
+  <div class="container">
+    <div class="text-center reveal">
+      <div class="section-label">Simple Pricing</div>
+      <h2 class="section-title">Choose Your <span class="text-gradient">Service Package</span></h2>
+      <p class="section-sub">All packages include our signature quality guarantee and dedicated account manager.</p>
+    </div>
+    <div class="grid-3" style="margin-top:3rem;">
+      <div class="pricing-card reveal reveal-delay-1">
+        <div class="section-label">Starter</div>
+        <div class="pricing-price"><sup>$</sup>25K</div>
+        <p style="color:var(--text-muted);font-size:0.9rem;">Perfect for small businesses &amp; pilots</p>
+        <ul class="pricing-list"><li>Up to 100 sqm farm</li><li>Basic NFT system</li><li>IoT monitoring</li><li>3-day training</li><li>6-month support</li></ul>
+        <a href="contact.html" class="btn btn-outline" style="width:100%;justify-content:center;">Get Started</a>
+      </div>
+      <div class="pricing-card featured reveal reveal-delay-2">
+        <div class="pricing-badge">Most Popular</div>
+        <div class="section-label" style="color:var(--accent);">Business</div>
+        <div class="pricing-price"><sup>$</sup>95K</div>
+        <p style="color:var(--text-muted);font-size:0.9rem;">For scaling commercial operations</p>
+        <ul class="pricing-list"><li>Up to 500 sqm farm</li><li>Full turnkey installation</li><li>AI automation suite</li><li>Full staff training</li><li>12-month support</li></ul>
+        <a href="contact.html" class="btn btn-primary" style="width:100%;justify-content:center;">Get Started</a>
+      </div>
+      <div class="pricing-card reveal reveal-delay-3">
+        <div class="section-label">Enterprise</div>
+        <div class="pricing-price">Custom</div>
+        <p style="color:var(--text-muted);font-size:0.9rem;">For large-scale &amp; government projects</p>
+        <ul class="pricing-list"><li>Unlimited scale</li><li>Custom system design</li><li>Full AI + automation</li><li>Dedicated engineer</li><li>5-year SLA</li></ul>
+        <a href="contact.html" class="btn btn-outline" style="width:100%;justify-content:center;">Contact Sales</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="section">
+  <div class="container">
+    <div class="cta-banner reveal">
+      <h2>Ready to <span style="color:var(--accent2)">Get Started?</span></h2>
+      <p>Our team will assess your needs and recommend the best service package for your goals and budget.</p>
+      <div class="cta-btns">
+        <a href="contact.html" class="btn btn-gold btn-lg">Request Free Consultation</a>
+        <a href="technology.html" class="btn btn-light btn-lg">Explore Technology</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand"><div class="footer-logo"><img src="images/logo_leaf.png" alt="" style="width:26px;height:26px;object-fit:cover;border-radius:5px;"/> Hydro<span>Farm</span> Pro</div><p>The world's leading B2B hydroponic vertical farm solutions provider.</p><div class="social-links" style="margin-top:1.5rem;"><a href="#" class="social-link">Li</a><a href="#" class="social-link">Tw</a><a href="#" class="social-link">YT</a><a href="#" class="social-link">Fb</a></div></div>
+      <div><div class="footer-heading">Solutions</div><ul class="footer-links"><li><a href="services.html">Turnkey Setup</a></li><li><a href="technology.html">Technology</a></li><li><a href="products.html">Products</a></li></ul></div>
+      <div><div class="footer-heading">Company</div><ul class="footer-links"><li><a href="about.html">About Us</a></li><li><a href="contact.html">Contact</a></li><li><a href="dashboard.html">B2B Portal</a></li></ul></div>
+      <div><div class="footer-heading">Get In Touch</div><ul class="footer-contact"><li><span>&#8962;</span><span>42 Green Tower, Dubai, UAE</span></li><li><span>&#128222;</span><span>+971 4 000 0000</span></li><li><span>&#9993;</span><span>info@hydrofarm.pro</span></li></ul></div>
+    </div>
+    <div class="footer-bottom"><span>&copy; 2026 HydroFarm Pro. All rights reserved.</span><span>Sustainable Farming</span></div>
+  </div>
+</footer>
+<a href="#" class="back-to-top" id="back-to-top">&#8679;</a>
+<script src="js/main.js"></script>
+</body>
+</html>

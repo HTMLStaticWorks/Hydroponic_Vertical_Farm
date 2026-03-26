@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>HydroFarm Pro — About Us</title>
+  <meta name="description" content="About HydroFarm Pro — mission, team, sustainability commitment, and certifications."/>
+  <link rel="stylesheet" href="css/style.css"/>
+  <link rel="stylesheet" href="css/nav.css"/>
+  <style>
+    .team-card { background:var(--bg-card); border-radius:var(--radius-lg); padding:2rem; text-align:center; border:1px solid var(--border-light); box-shadow:var(--shadow-card); transition:transform 0.3s,box-shadow 0.3s; }
+    .team-card:hover { transform:translateY(-6px); box-shadow:var(--shadow-lg); }
+    .team-avatar { width:90px; height:90px; border-radius:50%; object-fit:cover; margin:0 auto 1.2rem; display:block; }
+    .team-name { font-weight:700; font-size:1.05rem; margin-bottom:0.2rem; }
+    .team-role { font-size:0.85rem; color:var(--accent); font-weight:600; margin-bottom:0.8rem; }
+    .team-bio { font-size:0.88rem; color:var(--text-muted); line-height:1.6; }
+    .cert-card { background:var(--bg-card); border-radius:var(--radius); padding:1.8rem; border:2px solid var(--border-light); display:flex; align-items:center; gap:1.5rem; transition:border-color 0.3s,transform 0.3s; }
+    .cert-card:hover { border-color:var(--accent); transform:translateX(4px); }
+    .cert-icon { width:56px; height:56px; border-radius:12px; object-fit:cover; flex-shrink:0; }
+  </style>
+</head>
+<body>
+<!-- NAV -->
+<nav class="site-nav" id="site-nav">
+  <div class="nav-inner">
+    <a href="index.html" class="nav-logo"><div class="logo-icon"><img src="images/logo_leaf.png" alt="" style="width:28px;height:28px;object-fit:cover;border-radius:6px;"/></div><span class="logo-text">Hydro<span>Farm</span> Pro</span></a>
+    <div class="nav-links"><a href="index.html" class="nav-link">Home</a><a href="home2.html" class="nav-link">Home 2</a><a href="technology.html" class="nav-link">Technology</a><a href="services.html" class="nav-link">Services</a><a href="products.html" class="nav-link">Products</a><a href="dashboard.html" class="nav-link">Dashboard</a><a href="about.html" class="nav-link">About</a><a href="contact.html" class="nav-link">Contact</a></div>
+    <div class="nav-actions"><button class="icon-btn" data-theme-toggle>&#9681;</button><button class="icon-btn" data-rtl-toggle id="rtl-label">RTL</button><a href="signup.html" class="nav-link nav-signup-btn">Sign Up</a><button class="hamburger" id="hamburger"><span class="hamburger-line"></span><span class="hamburger-line"></span><span class="hamburger-line"></span></button></div>
+  </div>
+</nav>
+<div class="nav-overlay" id="nav-overlay"></div>
+<div class="mobile-menu" id="mobile-menu">
+  <div class="mobile-menu-header"><a href="index.html" class="nav-logo"><div class="logo-icon"><img src="images/logo_leaf.png" alt="" style="width:24px;height:24px;object-fit:cover;border-radius:5px;"/></div><span class="logo-text">Hydro<span>Farm</span> Pro</span></a><button class="mobile-close" id="mobile-close">&#10005;</button></div>
+  <nav class="mobile-nav-links"><a href="index.html">Home</a><a href="home2.html">Home 2</a><a href="technology.html">Technology</a><a href="services.html">Services</a><a href="products.html">Products</a><a href="dashboard.html">Dashboard</a><a href="about.html">About</a><a href="contact.html">Contact</a></nav>
+  <div class="mobile-toggles"><button class="icon-btn" data-theme-toggle>&#9681;</button><button class="icon-btn" data-rtl-toggle>RTL</button></div>
+  <div class="mobile-actions"><a href="signup.html" class="btn btn-primary">Sign Up Free</a><a href="contact.html" class="btn btn-outline">Get a Quote</a></div>
+</div>
+
+<!-- PAGE HERO -->
+<section class="page-hero">
+  <div class="container">
+    <nav class="breadcrumb"><a href="index.html">Home</a><span>/</span><span style="color:#fff;">About Us</span></nav>
+    <h1>We're Building the <span style="color:var(--accent2)">Future of Food</span></h1>
+    <p>Founded in 2018, HydroFarm Pro has grown into the world's most trusted B2B vertical farming solutions provider — with operations across 42 countries.</p>
+  </div>
+</section>
+
+<!-- COMPANY VISION -->
+<section class="section">
+  <div class="container">
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:5rem;align-items:center;">
+      <div class="reveal">
+        <div class="section-label">Our Vision</div>
+        <h2 class="section-title">Growing a <span class="text-gradient">Sustainable World</span></h2>
+        <p style="margin-bottom:1.5rem;">We envision a world where every city, every restaurant, and every community has access to fresh, locally-grown, chemical-free produce — grown with 90% less water than conventional farming.</p>
+        <p style="margin-bottom:2rem;">Our mission is to make vertical farming accessible, profitable, and scalable for businesses of all sizes.</p>
+        <div style="display:flex;gap:2rem;flex-wrap:wrap;">
+          <div><div style="font-family:'Outfit',sans-serif;font-size:2.5rem;font-weight:800;color:var(--primary);">2018</div><div style="font-size:0.88rem;color:var(--text-muted);">Founded</div></div>
+          <div><div style="font-family:'Outfit',sans-serif;font-size:2.5rem;font-weight:800;color:var(--primary);">42</div><div style="font-size:0.88rem;color:var(--text-muted);">Countries</div></div>
+          <div><div style="font-family:'Outfit',sans-serif;font-size:2.5rem;font-weight:800;color:var(--primary);">1,400+</div><div style="font-size:0.88rem;color:var(--text-muted);">Farms Installed</div></div>
+          <div><div style="font-family:'Outfit',sans-serif;font-size:2.5rem;font-weight:800;color:var(--primary);">200+</div><div style="font-size:0.88rem;color:var(--text-muted);">Experts Worldwide</div></div>
+        </div>
+      </div>
+      <div class="reveal reveal-delay-2">
+        <img src="images/about_sustainability.png" alt="Aerial view of sustainable hydroponic farm campus" style="width:100%;height:380px;object-fit:cover;border-radius:24px;box-shadow:var(--shadow-lg);"/>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SUSTAINABILITY -->
+<section class="section section-alt">
+  <div class="container">
+    <div class="text-center reveal">
+      <div class="section-label">Sustainability Mission</div>
+      <h2 class="section-title">Farming for <span class="text-gradient">Future Generations</span></h2>
+      <p class="section-sub">Every farm we install reduces the environmental footprint of food production.</p>
+    </div>
+    <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:2rem;margin-top:3rem;">
+      <div class="card reveal reveal-delay-1" style="text-align:center;">
+        <img src="images/hero_farm_overview.png" alt="Water conservation" style="width:100%;height:120px;object-fit:cover;border-radius:12px;margin-bottom:1rem;"/>
+        <h3>Water Conservation</h3>
+        <p>Our closed-loop systems save over <strong style="color:var(--accent)">2.8 billion litres</strong> of water annually across all installed farms.</p>
+      </div>
+      <div class="card reveal reveal-delay-2" style="text-align:center;">
+        <img src="images/product_nutrients.png" alt="Zero chemicals farming" style="width:100%;height:120px;object-fit:cover;border-radius:12px;margin-bottom:1rem;"/>
+        <h3>Zero Chemicals</h3>
+        <p>100% of our farms operate without chemical pesticides — producing safer food for families and protecting ecosystems.</p>
+      </div>
+      <div class="card reveal reveal-delay-3" style="text-align:center;">
+        <img src="images/about_sustainability.png" alt="Renewable energy integration" style="width:100%;height:120px;object-fit:cover;border-radius:12px;margin-bottom:1rem;"/>
+        <h3>Renewable Integration</h3>
+        <p>Our systems are designed to run on 100% renewable energy with solar and battery backup options.</p>
+      </div>
+    </div>
+    <div class="grid-4" style="margin-top:3rem;">
+      <div class="stat-card reveal reveal-delay-1"><div class="stat-number" data-counter="2800" data-suffix="M L">0</div><div class="stat-label">Water Saved Annually</div></div>
+      <div class="stat-card reveal reveal-delay-2"><div class="stat-number" data-counter="0" data-suffix=" Chemicals">0</div><div class="stat-label">Pesticides Used</div></div>
+      <div class="stat-card reveal reveal-delay-3"><div class="stat-number" data-counter="45" data-suffix="%">0%</div><div class="stat-label">Carbon Reduction vs. Traditional</div></div>
+      <div class="stat-card reveal reveal-delay-4"><div class="stat-number" data-counter="320" data-suffix=" MW">0</div><div class="stat-label">Solar Capacity Across Farms</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- TEAM -->
+<section class="section">
+  <div class="container">
+    <div class="text-center reveal">
+      <div class="section-label">Our People</div>
+      <h2 class="section-title">Meet the <span class="text-gradient">Expert Team</span></h2>
+      <p class="section-sub">Agronomists, engineers, and business experts united by a passion for sustainable food systems.</p>
+    </div>
+    <div class="grid-4" style="margin-top:3rem;">
+      <div class="team-card reveal reveal-delay-1">
+        <img src="images/about_team.png" alt="Dr. Khalid Hassan" class="team-avatar"/>
+        <div class="team-name">Dr. Khalid Hassan</div>
+        <div class="team-role">Chief Executive Officer</div>
+        <div class="team-bio">20+ years in AgriTech. PhD in Plant Biology, Oxford. Former Head of R&D at GreenVenture Capital.</div>
+      </div>
+      <div class="team-card reveal reveal-delay-2">
+        <img src="images/about_team.png" alt="Layla Martinez" class="team-avatar" style="object-position:30% center;"/>
+        <div class="team-name">Layla Martinez</div>
+        <div class="team-role">Chief Technology Officer</div>
+        <div class="team-bio">IoT systems architect with 15 years building precision agriculture technology across 3 continents.</div>
+      </div>
+      <div class="team-card reveal reveal-delay-3">
+        <img src="images/about_team.png" alt="Amir Rashid" class="team-avatar" style="object-position:60% center;"/>
+        <div class="team-name">Amir Rashid</div>
+        <div class="team-role">Head of Operations</div>
+        <div class="team-bio">Farm operations specialist who has overseen 600+ installations across the Middle East, Africa, and Europe.</div>
+      </div>
+      <div class="team-card reveal reveal-delay-4">
+        <img src="images/about_team.png" alt="Dr. Sofia Patel" class="team-avatar" style="object-position:80% center;"/>
+        <div class="team-name">Dr. Sofia Patel</div>
+        <div class="team-role">Lead Agronomist</div>
+        <div class="team-bio">Hydroponic crop scientist with a library of 500+ proven growth recipes for commercial production.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CERTIFICATIONS -->
+<section class="section section-alt">
+  <div class="container">
+    <div class="text-center reveal">
+      <div class="section-label">Trust &amp; Quality</div>
+      <h2 class="section-title">Internationally <span class="text-gradient">Certified</span></h2>
+      <p class="section-sub">Our systems meet the most stringent global standards.</p>
+    </div>
+    <div class="grid-2" style="margin-top:3rem;max-width:900px;margin-left:auto;margin-right:auto;gap:1.5rem;">
+      <div class="cert-card reveal reveal-delay-1">
+        <img src="images/logo_leaf.png" alt="ISO 9001" class="cert-icon"/>
+        <div><h4>ISO 9001:2015</h4><p style="font-size:0.88rem;color:var(--text-muted);">Quality management certified — ensuring consistent excellence in every project.</p></div>
+      </div>
+      <div class="cert-card reveal reveal-delay-2">
+        <img src="images/about_sustainability.png" alt="GlobalGAP" class="cert-icon"/>
+        <div><h4>GlobalG.A.P. Certified</h4><p style="font-size:0.88rem;color:var(--text-muted);">All produce meets GlobalG.A.P. standards for safe, sustainable agriculture.</p></div>
+      </div>
+      <div class="cert-card reveal reveal-delay-3">
+        <img src="images/hero_farm_overview.png" alt="Carbon Neutral" class="cert-icon"/>
+        <div><h4>Carbon Neutral Certified</h4><p style="font-size:0.88rem;color:var(--text-muted);">Verified carbon-neutral operations since 2023 through renewable energy programs.</p></div>
+      </div>
+      <div class="cert-card reveal reveal-delay-4">
+        <img src="images/tech_iot.png" alt="ISO 27001" class="cert-icon"/>
+        <div><h4>ISO 27001 Data Security</h4><p style="font-size:0.88rem;color:var(--text-muted);">Our IoT platform and farm data systems meet highest information security standards.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="section">
+  <div class="container">
+    <div class="cta-banner reveal">
+      <h2>Join Our <span style="color:var(--accent2)">Growing Team</span></h2>
+      <p>We're always looking for passionate agronomists, engineers, and leaders to grow with us globally.</p>
+      <div class="cta-btns">
+        <a href="contact.html" class="btn btn-gold btn-lg">Work With Us</a>
+        <a href="contact.html" class="btn btn-light btn-lg">Partner Program</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand"><div class="footer-logo"><img src="images/logo_leaf.png" alt="" style="width:26px;height:26px;object-fit:cover;border-radius:5px;"/> Hydro<span>Farm</span> Pro</div><p>The world's leading B2B hydroponic vertical farm solutions provider.</p><div class="social-links" style="margin-top:1.5rem;"><a href="#" class="social-link">Li</a><a href="#" class="social-link">Tw</a><a href="#" class="social-link">YT</a><a href="#" class="social-link">Fb</a></div></div>
+      <div><div class="footer-heading">Solutions</div><ul class="footer-links"><li><a href="services.html">Services</a></li><li><a href="technology.html">Technology</a></li><li><a href="products.html">Products</a></li></ul></div>
+      <div><div class="footer-heading">Company</div><ul class="footer-links"><li><a href="about.html">About Us</a></li><li><a href="contact.html">Contact</a></li><li><a href="dashboard.html">B2B Portal</a></li></ul></div>
+      <div><div class="footer-heading">Get In Touch</div><ul class="footer-contact"><li><span>&#8962;</span><span>42 Green Tower, Dubai, UAE</span></li><li><span>&#128222;</span><span>+971 4 000 0000</span></li><li><span>&#9993;</span><span>info@hydrofarm.pro</span></li></ul></div>
+    </div>
+    <div class="footer-bottom"><span>&copy; 2026 HydroFarm Pro. All rights reserved.</span><span>Sustainable Farming</span></div>
+  </div>
+</footer>
+<a href="#" class="back-to-top" id="back-to-top">&#8679;</a>
+<script src="js/main.js"></script>
+</body>
+</html>

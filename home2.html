@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>HydroFarm Pro — Marketing &amp; Lead Generation</title>
+  <meta name="description" content="See the ROI of vertical hydroponic farming, business models, and how to get started quickly with HydroFarm Pro."/>
+  <link rel="stylesheet" href="css/style.css"/>
+  <link rel="stylesheet" href="css/nav.css"/>
+  <style>
+    .video-hero { position:relative; min-height:90vh; display:flex; align-items:center; overflow:hidden; }
+    .video-hero-bg { position:absolute; inset:0; }
+    .video-hero-bg img { width:100%; height:100%; object-fit:cover; display:block; }
+    .video-hero-bg::after { content:''; position:absolute; inset:0; background:linear-gradient(135deg,rgba(5,26,16,0.85) 40%,rgba(0,0,0,0.4)); }
+    .video-hero .container { position:relative; z-index:2; }
+    .roi-icon { width:60px; height:60px; border-radius:14px; object-fit:cover; margin-bottom:1rem; display:block; }
+    .timeline-item { display:flex; gap:2rem; align-items:flex-start; padding-bottom:2rem; position:relative; }
+    .timeline-item:not(:last-child)::after { content:''; position:absolute; left:28px; top:64px; width:2px; height:calc(100% - 30px); background:var(--border); }
+    .timeline-num { width:56px; height:56px; border-radius:50%; background:var(--primary); color:#fff; font-weight:800; font-size:1.2rem; display:flex; align-items:center; justify-content:center; flex-shrink:0; font-family:'Outfit',sans-serif; }
+    .timeline-img { width:56px; height:56px; border-radius:50%; object-fit:cover; flex-shrink:0; border:3px solid var(--primary); }
+    .biz-card-img { width:100%; height:150px; object-fit:cover; border-radius:14px; margin-bottom:1rem; }
+  </style>
+</head>
+<body>
+<!-- NAV -->
+<nav class="site-nav" id="site-nav">
+  <div class="nav-inner">
+    <a href="index.html" class="nav-logo"><div class="logo-icon"><img src="images/logo_leaf.png" alt="" style="width:28px;height:28px;object-fit:cover;border-radius:6px;"/></div><span class="logo-text">Hydro<span>Farm</span> Pro</span></a>
+    <div class="nav-links"><a href="index.html" class="nav-link">Home</a><a href="home2.html" class="nav-link">Home 2</a><a href="technology.html" class="nav-link">Technology</a><a href="services.html" class="nav-link">Services</a><a href="products.html" class="nav-link">Products</a><a href="dashboard.html" class="nav-link">Dashboard</a><a href="about.html" class="nav-link">About</a><a href="contact.html" class="nav-link">Contact</a></div>
+    <div class="nav-actions"><button class="icon-btn" data-theme-toggle>&#9681;</button><button class="icon-btn" data-rtl-toggle id="rtl-label">RTL</button><a href="signup.html" class="nav-link nav-signup-btn">Sign Up</a><button class="hamburger" id="hamburger"><span class="hamburger-line"></span><span class="hamburger-line"></span><span class="hamburger-line"></span></button></div>
+  </div>
+</nav>
+<div class="nav-overlay" id="nav-overlay"></div>
+<div class="mobile-menu" id="mobile-menu">
+  <div class="mobile-menu-header"><a href="index.html" class="nav-logo"><div class="logo-icon"><img src="images/logo_leaf.png" alt="" style="width:24px;height:24px;object-fit:cover;border-radius:5px;"/></div><span class="logo-text">Hydro<span>Farm</span> Pro</span></a><button class="mobile-close" id="mobile-close">&#10005;</button></div>
+  <nav class="mobile-nav-links"><a href="index.html">Home</a><a href="home2.html">Home 2</a><a href="technology.html">Technology</a><a href="services.html">Services</a><a href="products.html">Products</a><a href="dashboard.html">Dashboard</a><a href="about.html">About</a><a href="contact.html">Contact</a></nav>
+  <div class="mobile-toggles"><button class="icon-btn" data-theme-toggle>&#9681;</button><button class="icon-btn" data-rtl-toggle>RTL</button></div>
+  <div class="mobile-actions"><a href="signup.html" class="btn btn-primary">Sign Up Free</a><a href="contact.html" class="btn btn-outline">Get a Quote</a></div>
+</div>
+
+<!-- VIDEO HERO -->
+<section class="video-hero" style="padding-top:var(--nav-height);">
+  <div class="video-hero-bg">
+    <img src="images/hero_vertical_farm.png" alt="Hydroponic vertical farm interior"/>
+  </div>
+  <div class="container">
+    <div style="max-width:700px;" class="animate-fadeUp">
+      <div class="hero-badge">B2B Solutions</div>
+      <h1 style="color:#fff;font-size:clamp(2rem,5vw,3.8rem);margin-bottom:1.5rem;">Turn Any Space into a <span style="color:var(--accent)">Profitable Farm</span></h1>
+      <p style="color:rgba(255,255,255,0.8);font-size:1.15rem;margin-bottom:2.5rem;">Deploy a full-scale hydroponic vertical farm in under 8 weeks. ROI achieved in as little as 14 months.</p>
+      <div style="display:flex;gap:1rem;flex-wrap:wrap;">
+        <a href="contact.html" class="btn btn-gold btn-lg">Get Free ROI Report</a>
+        <a href="contact.html" class="btn btn-light btn-lg">Book Live Demo</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ROI HIGHLIGHTS -->
+<section class="section">
+  <div class="container">
+    <div class="text-center reveal">
+      <div class="section-label">Why Invest Now</div>
+      <h2 class="section-title">The Business Case for <span class="text-gradient">Vertical Farming</span></h2>
+      <p class="section-sub">Real numbers from real clients after 12 months of operation.</p>
+    </div>
+    <div class="grid-3" style="margin-top:3rem;">
+      <div class="card reveal reveal-delay-1" style="text-align:center;">
+        <img src="images/hero_farm_overview.png" alt="High ROI farming" class="roi-icon" style="width:100%;height:120px;object-fit:cover;border-radius:12px;margin-bottom:1rem;"/>
+        <div style="font-family:'Outfit',sans-serif;font-size:3rem;font-weight:900;color:var(--primary);">14mo</div>
+        <h3>Payback Period</h3>
+        <p>Most Business-tier clients recover their full investment within 14 months of going live.</p>
+      </div>
+      <div class="card reveal reveal-delay-2" style="text-align:center;">
+        <img src="images/product_tower.png" alt="320% yield increase" class="roi-icon" style="width:100%;height:120px;object-fit:cover;border-radius:12px;margin-bottom:1rem;"/>
+        <div style="font-family:'Outfit',sans-serif;font-size:3rem;font-weight:900;color:var(--primary);">320%</div>
+        <h3>Yield Increase</h3>
+        <p>Average yield improvement over conventional farming for the same floor space.</p>
+      </div>
+      <div class="card reveal reveal-delay-3" style="text-align:center;">
+        <img src="images/tech_led.png" alt="90% water savings" class="roi-icon" style="width:100%;height:120px;object-fit:cover;border-radius:12px;margin-bottom:1rem;"/>
+        <div style="font-family:'Outfit',sans-serif;font-size:3rem;font-weight:900;color:var(--primary);">90%</div>
+        <h3>Water Saved</h3>
+        <p>Compared to open-field soil farming — significant utility cost savings every month.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SETUP TIMELINE -->
+<section class="section section-alt">
+  <div class="container">
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:5rem;align-items:start;">
+      <div class="reveal">
+        <div class="section-label">Your Journey</div>
+        <h2 class="section-title">From Concept to <span class="text-gradient">First Harvest</span></h2>
+        <p style="margin-bottom:3rem;">Our streamlined process gets your farm producing within weeks, not months.</p>
+        <div>
+          <div class="timeline-item">
+            <div class="timeline-num">1</div>
+            <div><h4>Consultation &amp; Site Survey</h4><p style="font-size:0.9rem;color:var(--text-muted);">Week 1–2: Our team assesses your space, crops, and business goals to design the optimal system.</p></div>
+          </div>
+          <div class="timeline-item">
+            <img src="images/service_turnkey.png" alt="Design" class="timeline-img"/>
+            <div><h4>Custom Design &amp; Procurement</h4><p style="font-size:0.9rem;color:var(--text-muted);">Week 3–4: We engineer your farm layout and order all equipment.</p></div>
+          </div>
+          <div class="timeline-item">
+            <img src="images/product_tower.png" alt="Installation" class="timeline-img"/>
+            <div><h4>Installation &amp; Commissioning</h4><p style="font-size:0.9rem;color:var(--text-muted);">Week 5–7: Your certified installation team sets up all hardware and software.</p></div>
+          </div>
+          <div class="timeline-item">
+            <img src="images/about_team.png" alt="Training" class="timeline-img"/>
+            <div><h4>Training &amp; First Harvest</h4><p style="font-size:0.9rem;color:var(--text-muted);">Week 8+: Staff training + plant seeding. First harvest in as little as 3–4 weeks post-planting.</p></div>
+          </div>
+        </div>
+        <a href="services.html" class="btn btn-primary" style="margin-top:1rem;">View All Services &rarr;</a>
+      </div>
+      <div class="reveal reveal-delay-2">
+        <img src="images/service_turnkey.png" alt="Farm installation in progress" style="width:100%;height:480px;object-fit:cover;border-radius:24px;box-shadow:var(--shadow-lg);"/>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- BUSINESS MODELS -->
+<section class="section">
+  <div class="container">
+    <div class="text-center reveal">
+      <div class="section-label">Choose Your Path</div>
+      <h2 class="section-title">Business <span class="text-gradient">Models That Work</span></h2>
+    </div>
+    <div class="grid-3" style="margin-top:3rem;">
+      <div class="card reveal reveal-delay-1">
+        <img src="images/about_team.png" alt="Direct-to-consumer model" class="biz-card-img"/>
+        <h3>Restaurant Model</h3>
+        <p>Grow herbs and microgreens on-site to eliminate supplier costs. Top restaurants save $2,000–$8,000/month.</p>
+        <a href="contact.html" class="btn btn-outline btn-sm" style="margin-top:1rem;">Learn More</a>
+      </div>
+      <div class="card reveal reveal-delay-2">
+        <img src="images/hero_farm_overview.png" alt="Wholesale distribution model" class="biz-card-img"/>
+        <h3>Wholesale Model</h3>
+        <p>Supply premium organic produce to retailers, hospitals, and corporate cafeterias at guaranteed monthly contracts.</p>
+        <a href="contact.html" class="btn btn-outline btn-sm" style="margin-top:1rem;">Learn More</a>
+      </div>
+      <div class="card reveal reveal-delay-3">
+        <img src="images/about_sustainability.png" alt="Export business model" class="biz-card-img"/>
+        <h3>Export Model</h3>
+        <p>Consistent quality and certified produce for export to premium international food markets.</p>
+        <a href="contact.html" class="btn btn-outline btn-sm" style="margin-top:1rem;">Learn More</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- LEAD CAPTURE -->
+<section class="section section-alt">
+  <div class="container" style="max-width:700px;">
+    <div class="text-center reveal">
+      <div class="section-label">Get Started</div>
+      <h2 class="section-title">Download Your Free <span class="text-gradient">ROI Report</span></h2>
+      <p class="section-sub">Enter your details and receive a customized ROI projection for your vertical farm within 24 hours.</p>
+    </div>
+    <div class="card reveal" style="padding:3rem;margin-top:2.5rem;">
+      <form data-validate>
+        <div class="grid-2">
+          <div class="form-group"><label class="form-label">Full Name *</label><input type="text" class="form-control" placeholder="Your name" required/></div>
+          <div class="form-group"><label class="form-label">Business Email *</label><input type="email" class="form-control" placeholder="you@company.com" required/></div>
+          <div class="form-group"><label class="form-label">Company *</label><input type="text" class="form-control" placeholder="Company name" required/></div>
+          <div class="form-group"><label class="form-label">Business Type *</label>
+            <select class="form-control" required><option value="">Select...</option><option>Restaurant / Hotel</option><option>Supermarket / Retail</option><option>Export Business</option><option>Agri Startup</option><option>Government</option></select></div>
+        </div>
+        <div class="form-group"><label class="form-label">Available Space (sqm) *</label><input type="number" class="form-control" placeholder="e.g. 200" required/></div>
+        <button type="submit" class="btn btn-primary btn-lg" style="width:100%;justify-content:center;">Get My Free ROI Report</button>
+        <p style="text-align:center;font-size:0.82rem;color:var(--text-muted);margin-top:1rem;">No spam. No commitment. Just numbers.</p>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="section">
+  <div class="container">
+    <div class="cta-banner reveal">
+      <h2>Ready to <span style="color:var(--accent2)">Start Growing?</span></h2>
+      <p>Join 1,400+ businesses already transforming their operations with HydroFarm Pro.</p>
+      <div class="cta-btns">
+        <a href="contact.html" class="btn btn-gold btn-lg">Book a Free Demo</a>
+        <a href="products.html" class="btn btn-light btn-lg">Explore Products</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand"><div class="footer-logo"><img src="images/logo_leaf.png" alt="" style="width:26px;height:26px;object-fit:cover;border-radius:5px;"/> Hydro<span>Farm</span> Pro</div><p>The world's leading B2B hydroponic vertical farm solutions provider.</p><div class="social-links" style="margin-top:1.5rem;"><a href="#" class="social-link">Li</a><a href="#" class="social-link">Tw</a><a href="#" class="social-link">YT</a><a href="#" class="social-link">Fb</a></div></div>
+      <div><div class="footer-heading">Solutions</div><ul class="footer-links"><li><a href="services.html">Services</a></li><li><a href="technology.html">Technology</a></li><li><a href="products.html">Products</a></li></ul></div>
+      <div><div class="footer-heading">Company</div><ul class="footer-links"><li><a href="about.html">About Us</a></li><li><a href="contact.html">Contact</a></li><li><a href="dashboard.html">B2B Portal</a></li></ul></div>
+      <div><div class="footer-heading">Get In Touch</div><ul class="footer-contact"><li><span>&#8962;</span><span>42 Green Tower, Dubai, UAE</span></li><li><span>&#128222;</span><span>+971 4 000 0000</span></li><li><span>&#9993;</span><span>info@hydrofarm.pro</span></li></ul></div>
+    </div>
+    <div class="footer-bottom"><span>&copy; 2026 HydroFarm Pro. All rights reserved.</span><span>Sustainable Farming</span></div>
+  </div>
+</footer>
+<a href="#" class="back-to-top" id="back-to-top">&#8679;</a>
+<script src="js/main.js"></script>
+</body>
+</html>

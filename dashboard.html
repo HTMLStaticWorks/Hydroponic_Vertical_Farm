@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>HydroFarm Pro — B2B Dashboard</title>
+  <meta name="description" content="HydroFarm Pro B2B portal — farm monitoring, analytics, orders, and support."/>
+  <link rel="stylesheet" href="css/style.css"/>
+  <link rel="stylesheet" href="css/nav.css"/>
+  <link rel="stylesheet" href="css/dashboard.css"/>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+  <style>
+    .dash-avatar-img { width:40px; height:40px; border-radius:50%; object-fit:cover; }
+    .dash-alert-img { width:28px; height:28px; border-radius:6px; object-fit:cover; flex-shrink:0; }
+    .kpi-icon-img { width:40px; height:40px; border-radius:10px; object-fit:cover; }
+    .zone-thumb { width:36px; height:36px; border-radius:8px; object-fit:cover; }
+    .status-pill.critical { background:rgba(239,68,68,0.1); color:#ef4444; border:1px solid rgba(239,68,68,0.25); }
+    .status-pill.shipped { background:rgba(59,130,246,0.1); color:#3b82f6; border:1px solid rgba(59,130,246,0.25); }
+    .status-pill.resolved { background:rgba(34,197,94,0.1); color:#16a34a; border:1px solid rgba(34,197,94,0.25); }
+    .status-pill.open { background:rgba(239,68,68,0.1); color:#ef4444; border:1px solid rgba(239,68,68,0.25); }
+  </style>
+</head>
+<body>
+
+<!-- TOP NAV -->
+<nav class="site-nav" id="site-nav" style="z-index:1001;">
+  <div class="nav-inner">
+    <div style="display:flex;align-items:center;gap:1rem;">
+      <button id="dash-sidebar-toggle" class="icon-btn" title="Toggle Sidebar" style="font-size:1.1rem;">&#9776;</button>
+      <a href="index.html" class="nav-logo">
+        <div class="logo-icon"><img src="images/logo_leaf.png" alt="" style="width:28px;height:28px;object-fit:cover;border-radius:6px;"/></div>
+        <span class="logo-text">Hydro<span>Farm</span> Pro</span>
+      </a>
+    </div>
+    <div class="nav-links">
+      <a href="index.html" class="nav-link">Home</a>
+      <a href="home2.html" class="nav-link">Home 2</a>
+      <a href="technology.html" class="nav-link">Technology</a>
+      <a href="services.html" class="nav-link">Services</a>
+      <a href="products.html" class="nav-link">Products</a>
+      <a href="dashboard.html" class="nav-link">Dashboard</a>
+      <a href="about.html" class="nav-link">About</a>
+      <a href="contact.html" class="nav-link">Contact</a>
+    </div>
+    <div class="nav-actions">
+      <button class="icon-btn" data-theme-toggle title="Toggle Theme">&#9681;</button>
+      <button class="icon-btn" data-rtl-toggle id="rtl-label">RTL</button>
+      <a href="signup.html" class="nav-link nav-signup-btn">Sign Up</a>
+      <button class="hamburger" id="hamburger"><span class="hamburger-line"></span><span class="hamburger-line"></span><span class="hamburger-line"></span></button>
+    </div>
+  </div>
+</nav>
+
+<div class="nav-overlay" id="nav-overlay"></div>
+<div class="mobile-menu" id="mobile-menu">
+  <div class="mobile-menu-header"><a href="index.html" class="nav-logo"><div class="logo-icon"><img src="images/logo_leaf.png" alt="" style="width:24px;height:24px;object-fit:cover;border-radius:5px;"/></div><span class="logo-text">Hydro<span>Farm</span> Pro</span></a><button class="mobile-close" id="mobile-close">&#10005;</button></div>
+  <nav class="mobile-nav-links"><a href="index.html">Home</a><a href="home2.html">Home 2</a><a href="technology.html">Technology</a><a href="services.html">Services</a><a href="products.html">Products</a><a href="dashboard.html">Dashboard</a><a href="about.html">About</a><a href="contact.html">Contact</a></nav>
+  <div class="mobile-toggles"><button class="icon-btn" data-theme-toggle>&#9681;</button><button class="icon-btn" data-rtl-toggle>RTL</button></div>
+  <div class="mobile-actions"><a href="signup.html" class="btn btn-primary">Sign Up Free</a></div>
+</div>
+<div class="nav-overlay" id="dash-overlay" style="z-index:99;"></div>
+
+<!-- DASHBOARD WRAPPER -->
+<div class="dashboard-wrapper">
+
+  <!-- SIDEBAR -->
+  <aside class="dash-sidebar" id="dash-sidebar">
+    <div class="dash-sidebar-header">
+      <div class="dash-farm-name">
+        <img src="images/logo_leaf.png" alt="" style="width:20px;height:20px;border-radius:4px;object-fit:cover;"/>
+        Dubai Farm Alpha
+      </div>
+      <div class="dash-farm-status"><div class="status-dot"></div> All Systems Online</div>
+    </div>
+
+    <nav class="dash-nav">
+      <div class="dash-nav-section">
+        <div class="dash-nav-label">Farm Control</div>
+        <a href="#" class="dash-nav-link active" onclick="switchDashTab('overview');return false;">
+          <img src="images/tech_iot.png" alt="" style="width:18px;height:18px;border-radius:4px;object-fit:cover;"/>Overview
+        </a>
+        <a href="#" class="dash-nav-link" onclick="switchDashTab('monitoring');return false;">
+          <img src="images/product_automation.png" alt="" style="width:18px;height:18px;border-radius:4px;object-fit:cover;"/>Live Monitoring
+        </a>
+        <a href="#" class="dash-nav-link" onclick="switchDashTab('analytics');return false;">
+          <img src="images/tech_ai.png" alt="" style="width:18px;height:18px;border-radius:4px;object-fit:cover;"/>Analytics
+        </a>
+      </div>
+      <div class="dash-nav-section">
+        <div class="dash-nav-label">Business</div>
+        <a href="#" class="dash-nav-link" onclick="switchDashTab('orders');return false;">
+          <img src="images/product_tower.png" alt="" style="width:18px;height:18px;border-radius:4px;object-fit:cover;"/>Orders<span class="dash-nav-badge">3</span>
+        </a>
+        <a href="#" class="dash-nav-link" onclick="switchDashTab('tickets');return false;">
+          <img src="images/logo_leaf.png" alt="" style="width:18px;height:18px;border-radius:4px;object-fit:cover;"/>Support<span class="dash-nav-badge">2</span>
+        </a>
+      </div>
+      <div class="dash-nav-section">
+        <div class="dash-nav-label">Farm Sites</div>
+        <a href="#" class="dash-nav-link"><img src="images/hero_farm_overview.png" alt="" style="width:18px;height:18px;border-radius:4px;object-fit:cover;"/> Dubai — Alpha</a>
+        <a href="#" class="dash-nav-link"><img src="images/hero_farm_overview.png" alt="" style="width:18px;height:18px;border-radius:4px;object-fit:cover;"/> Abu Dhabi — Beta</a>
+        <a href="contact.html" class="dash-nav-link" style="color:var(--accent);">+ Add New Farm</a>
+      </div>
+    </nav>
+
+    <div class="dash-sidebar-footer">
+      <div class="dash-user">
+        <img src="images/about_team.png" alt="Ahmed Al-Khalid" class="dash-avatar-img"/>
+        <div>
+          <div class="dash-user-name">Ahmed Al-Khalid</div>
+          <div class="dash-user-role">Farm Manager</div>
+        </div>
+      </div>
+    </div>
+  </aside>
+
+  <!-- MAIN -->
+  <main class="dash-main" id="dash-main">
+
+    <!-- OVERVIEW -->
+    <div id="overview-panel">
+      <div class="dash-header">
+        <div>
+          <div class="dash-page-title">Farm Overview</div>
+          <div class="dash-date" id="dash-clock">Loading...</div>
+        </div>
+        <div class="dash-header-actions">
+          <button class="btn btn-outline btn-sm">Export Report</button>
+          <a href="contact.html" class="btn btn-primary btn-sm">Get Support</a>
+        </div>
+      </div>
+
+      <div class="dash-alert warning" style="display:flex;align-items:center;gap:1rem;">
+        <img src="images/product_nutrients.png" alt="Alert" class="dash-alert-img"/>
+        <div class="dash-alert-text"><strong>Nutrient Level Low — Zone B3</strong> EC has dropped below threshold. Check nutrient reservoir and dosing pump.</div>
+        <button class="btn btn-sm btn-outline" onclick="this.closest('.dash-alert').remove()">Dismiss</button>
+      </div>
+
+      <!-- KPI Cards -->
+      <div class="kpi-grid">
+        <div class="kpi-card">
+          <div class="kpi-top">
+            <img src="images/hero_farm_overview.png" alt="Monthly yield" class="kpi-icon-img"/>
+            <div class="kpi-trend up">+8%</div>
+          </div>
+          <div class="kpi-value">2,280 kg</div>
+          <div class="kpi-label">Monthly Yield</div>
+        </div>
+        <div class="kpi-card">
+          <div class="kpi-top">
+            <img src="images/tech_climate.png" alt="Water usage" class="kpi-icon-img"/>
+            <div class="kpi-trend up">Saving 90%</div>
+          </div>
+          <div class="kpi-value">1,240 L</div>
+          <div class="kpi-label">Water Used Today</div>
+        </div>
+        <div class="kpi-card">
+          <div class="kpi-top">
+            <img src="images/tech_led.png" alt="Energy usage" class="kpi-icon-img"/>
+            <div class="kpi-trend down">-5% vs avg</div>
+          </div>
+          <div class="kpi-value">342 kWh</div>
+          <div class="kpi-label">Energy Used Today</div>
+        </div>
+        <div class="kpi-card">
+          <div class="kpi-top">
+            <img src="images/about_sustainability.png" alt="Revenue" class="kpi-icon-img"/>
+            <div class="kpi-trend up">+12%</div>
+          </div>
+          <div class="kpi-value">$94.8K</div>
+          <div class="kpi-label">Revenue This Quarter</div>
+        </div>
+      </div>
+
+      <!-- Charts -->
+      <div class="chart-grid">
+        <div class="chart-card">
+          <div class="chart-card-header">
+            <div><div class="chart-title">Annual Yield &amp; Water Usage</div><div class="chart-subtitle">2026 — Monthly</div></div>
+          </div>
+          <div class="chart-container"><canvas id="yield-chart"></canvas></div>
+        </div>
+        <div class="chart-card">
+          <div class="chart-card-header">
+            <div><div class="chart-title">Crop Distribution</div><div class="chart-subtitle">Current growing cycle</div></div>
+          </div>
+          <div class="chart-container"><canvas id="crop-chart"></canvas></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- MONITORING -->
+    <div id="monitoring-panel" style="display:none;">
+      <div class="dash-header">
+        <div>
+          <div class="dash-page-title">Live Monitoring</div>
+          <div class="dash-date" style="display:flex;align-items:center;gap:0.6rem;">
+            <img src="images/logo_leaf.png" alt="" style="width:14px;height:14px;object-fit:cover;border-radius:50%;"/>
+            Updating every 3 seconds
+          </div>
+        </div>
+        <div class="dash-header-actions"><button class="btn btn-outline btn-sm">Set Alert Thresholds</button></div>
+      </div>
+
+      <div class="sensor-grid" style="grid-template-columns:repeat(3,1fr);margin-bottom:2rem;">
+        <div class="sensor-card"><div class="sensor-label">Temperature</div><div class="sensor-value" id="sensor-temp">22°C</div><div class="sensor-unit">Target: 22 ± 2°C</div><div class="sensor-bar"><div class="sensor-fill" id="sensor-temp-bar" style="width:55%"></div></div></div>
+        <div class="sensor-card"><div class="sensor-label">Humidity</div><div class="sensor-value" id="sensor-humidity">68%</div><div class="sensor-unit">Target: 65–75%</div><div class="sensor-bar"><div class="sensor-fill" id="sensor-humidity-bar" style="width:68%"></div></div></div>
+        <div class="sensor-card"><div class="sensor-label">pH Level</div><div class="sensor-value" id="sensor-ph">6.2</div><div class="sensor-unit">Target: 5.8–6.5</div><div class="sensor-bar"><div class="sensor-fill" id="sensor-ph-bar" style="width:44%"></div></div></div>
+        <div class="sensor-card"><div class="sensor-label">EC Level</div><div class="sensor-value" id="sensor-ec">1.8 mS/cm</div><div class="sensor-unit">Target: 1.6–2.0</div><div class="sensor-bar"><div class="sensor-fill" id="sensor-ec-bar" style="width:45%"></div></div></div>
+        <div class="sensor-card"><div class="sensor-label">CO2 Level</div><div class="sensor-value" id="sensor-co2">800 ppm</div><div class="sensor-unit">Target: 800–1200 ppm</div><div class="sensor-bar"><div class="sensor-fill" id="sensor-co2-bar" style="width:40%"></div></div></div>
+        <div class="sensor-card"><div class="sensor-label">Light (PPFD)</div><div class="sensor-value" id="sensor-light">420 μmol</div><div class="sensor-unit">Target: 400–600 μmol</div><div class="sensor-bar"><div class="sensor-fill" id="sensor-light-bar" style="width:70%"></div></div></div>
+      </div>
+
+      <div class="data-table-card">
+        <div class="table-header"><div class="chart-title">Growing Zones — Status</div></div>
+        <table class="data-table">
+          <thead><tr><th>Zone</th><th>Image</th><th>Crop</th><th>Day</th><th>Expected Yield</th><th>Status</th></tr></thead>
+          <tbody>
+            <tr><td>Zone A1</td><td><img src="images/hero_farm_overview.png" alt="" class="zone-thumb"/></td><td>Butterhead Lettuce</td><td>Day 18/28</td><td>120 kg</td><td><span class="status-pill active">Healthy</span></td></tr>
+            <tr><td>Zone A2</td><td><img src="images/hero_farm_overview.png" alt="" class="zone-thumb"/></td><td>Basil</td><td>Day 12/21</td><td>35 kg</td><td><span class="status-pill active">Healthy</span></td></tr>
+            <tr><td>Zone B1</td><td><img src="images/hero_vertical_farm.png" alt="" class="zone-thumb"/></td><td>Spinach</td><td>Day 24/35</td><td>80 kg</td><td><span class="status-pill active">Healthy</span></td></tr>
+            <tr><td>Zone B2</td><td><img src="images/hero_vertical_farm.png" alt="" class="zone-thumb"/></td><td>Kale</td><td>Day 30/42</td><td>65 kg</td><td><span class="status-pill pending">Review</span></td></tr>
+            <tr><td>Zone B3</td><td><img src="images/product_nutrients.png" alt="" class="zone-thumb"/></td><td>Nutrients (prep)</td><td>—</td><td>—</td><td><span class="status-pill open">Low EC</span></td></tr>
+            <tr><td>Zone C1</td><td><img src="images/hero_farm_overview.png" alt="" class="zone-thumb"/></td><td>Microgreens Mix</td><td>Day 7/14</td><td>20 kg</td><td><span class="status-pill active">Healthy</span></td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- ANALYTICS -->
+    <div id="analytics-panel" style="display:none;">
+      <div class="dash-header">
+        <div><div class="dash-page-title">Analytics</div><div class="dash-date">2026 — Full Year</div></div>
+        <div class="dash-header-actions"><select class="form-control" style="width:auto;padding:0.4rem 1rem;font-size:0.85rem;"><option>2026</option><option>2025</option></select></div>
+      </div>
+      <div class="kpi-grid" style="margin-bottom:2rem;">
+        <div class="kpi-card"><div class="kpi-top"><img src="images/hero_farm_overview.png" alt="" class="kpi-icon-img"/><div class="kpi-trend up">+24%</div></div><div class="kpi-value">18.4 T</div><div class="kpi-label">Annual Yield</div></div>
+        <div class="kpi-card"><div class="kpi-top"><img src="images/about_sustainability.png" alt="" class="kpi-icon-img"/><div class="kpi-trend up">+31%</div></div><div class="kpi-value">$333K</div><div class="kpi-label">Annual Revenue</div></div>
+        <div class="kpi-card"><div class="kpi-top"><img src="images/tech_climate.png" alt="" class="kpi-icon-img"/><div class="kpi-trend up">Saving</div></div><div class="kpi-value">4.2M L</div><div class="kpi-label">Water Saved</div></div>
+        <div class="kpi-card"><div class="kpi-top"><img src="images/logo_leaf.png" alt="" class="kpi-icon-img"/><div class="kpi-trend up">+18%</div></div><div class="kpi-value">98.2%</div><div class="kpi-label">Crop Success Rate</div></div>
+      </div>
+      <div class="chart-grid" style="grid-template-columns:1.5fr 1fr;">
+        <div class="chart-card"><div class="chart-card-header"><div><div class="chart-title">Quarterly Revenue</div><div class="chart-subtitle">2026</div></div></div><div class="chart-container"><canvas id="sales-chart"></canvas></div></div>
+        <div class="chart-card"><div class="chart-card-header"><div><div class="chart-title">Best-Selling Crops</div><div class="chart-subtitle">By revenue share</div></div></div><div class="chart-container"><canvas id="crop-chart-2"></canvas></div></div>
+      </div>
+    </div>
+
+    <!-- ORDERS -->
+    <div id="orders-panel" style="display:none;">
+      <div class="dash-header">
+        <div><div class="dash-page-title">Orders</div><div class="dash-date">3 active orders</div></div>
+        <div class="dash-header-actions"><a href="products.html" class="btn btn-primary btn-sm">New Order</a></div>
+      </div>
+      <div class="data-table-card">
+        <div class="table-header"><div class="chart-title">Recent Orders</div></div>
+        <table class="data-table">
+          <thead><tr><th>Order #</th><th>Product</th><th>Image</th><th>Date</th><th>Amount</th><th>Status</th><th>Action</th></tr></thead>
+          <tbody>
+            <tr><td>#HFP-2026-089</td><td>SpectraGrow LED 640W x 4</td><td><img src="images/product_led.png" alt="" class="zone-thumb"/></td><td>Mar 22, 2026</td><td>$3,680</td><td><span class="status-pill shipped">Shipped</span></td><td><a href="#" style="color:var(--accent);font-weight:600;font-size:0.85rem;">Track</a></td></tr>
+            <tr><td>#HFP-2026-088</td><td>ProGrow Nutrient Kit x 20</td><td><img src="images/product_nutrients.png" alt="" class="zone-thumb"/></td><td>Mar 20, 2026</td><td>$3,600</td><td><span class="status-pill active">Delivered</span></td><td><a href="#" style="color:var(--accent);font-weight:600;font-size:0.85rem;">Invoice</a></td></tr>
+            <tr><td>#HFP-2026-087</td><td>SmartFarm Controller SC-1</td><td><img src="images/product_automation.png" alt="" class="zone-thumb"/></td><td>Mar 18, 2026</td><td>$2,400</td><td><span class="status-pill pending">Processing</span></td><td><a href="#" style="color:var(--accent);font-weight:600;font-size:0.85rem;">Details</a></td></tr>
+            <tr><td>#HFP-2026-083</td><td>VF-Tower Pro 500 x 10</td><td><img src="images/product_tower.png" alt="" class="zone-thumb"/></td><td>Feb 28, 2026</td><td>$48,000</td><td><span class="status-pill active">Installed</span></td><td><a href="#" style="color:var(--accent);font-weight:600;font-size:0.85rem;">Report</a></td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- SUPPORT TICKETS -->
+    <div id="tickets-panel" style="display:none;">
+      <div class="dash-header">
+        <div><div class="dash-page-title">Support Tickets</div><div class="dash-date">2 open tickets</div></div>
+        <div class="dash-header-actions"><button class="btn btn-primary btn-sm">New Ticket</button></div>
+      </div>
+      <div class="data-table-card">
+        <div class="table-header"><div class="chart-title">Active Support Tickets</div></div>
+        <table class="data-table">
+          <thead><tr><th>Ticket #</th><th>Subject</th><th>Priority</th><th>Created</th><th>Status</th><th>Action</th></tr></thead>
+          <tbody>
+            <tr><td>#TKT-1042</td><td>Zone B3 EC readings inconsistent</td><td><span class="status-pill critical">High</span></td><td>Mar 25, 2026</td><td><span class="status-pill open">Open</span></td><td><a href="#" style="color:var(--accent);font-weight:600;font-size:0.85rem;">Reply</a></td></tr>
+            <tr><td>#TKT-1039</td><td>LED panel dimming schedule not saving</td><td><span class="status-pill pending">Medium</span></td><td>Mar 22, 2026</td><td><span class="status-pill open">Open</span></td><td><a href="#" style="color:var(--accent);font-weight:600;font-size:0.85rem;">Reply</a></td></tr>
+            <tr><td>#TKT-1035</td><td>Dashboard not loading on Safari</td><td><span class="status-pill active">Low</span></td><td>Mar 19, 2026</td><td><span class="status-pill resolved">Resolved</span></td><td><a href="#" style="color:var(--accent);font-weight:600;font-size:0.85rem;">View</a></td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+  </main>
+</div>
+
+<script src="js/main.js"></script>
+<script src="js/dashboard.js"></script>
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+  const ctx2 = document.getElementById('crop-chart-2');
+  if (ctx2 && typeof Chart !== 'undefined') {
+    new Chart(ctx2, {
+      type: 'doughnut',
+      data: {
+        labels: ['Lettuce','Basil','Spinach','Kale','Herbs'],
+        datasets: [{ data:[42,18,20,12,8], backgroundColor:['#1e6f4c','#2d9c6a','#52b788','#74c69d','#95d5b2'], borderWidth:0, hoverOffset:8 }]
+      },
+      options: { responsive:true, maintainAspectRatio:false, cutout:'68%', plugins:{ legend:{ position:'bottom', labels:{ padding:14, font:{ size:11 } } } } }
+    });
+  }
+});
+function switchDashTab(tab) {
+  ['overview','monitoring','analytics','orders','tickets'].forEach(p => {
+    const el = document.getElementById(`${p}-panel`);
+    if (el) el.style.display = p === tab ? 'block' : 'none';
+  });
+  document.querySelectorAll('.dash-nav-link').forEach(a => a.classList.remove('active'));
+  document.querySelectorAll('.dash-nav-link').forEach(a => {
+    if (a.getAttribute('onclick') && a.getAttribute('onclick').includes(tab)) a.classList.add('active');
+  });
+}
+</script>
+</body>
+</html>

@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>HydroFarm Pro — Revolutionizing Vertical Farming</title>
+  <meta name="description" content="B2B Hydroponic Vertical Farm solutions — sustainable, high-yield farming for modern businesses. IoT monitoring, automated nutrition, climate control."/>
+  <link rel="stylesheet" href="css/style.css"/>
+  <link rel="stylesheet" href="css/nav.css"/>
+  <style>
+    .highlight-card { text-align:center; }
+    .highlight-icon { width:72px; height:72px; border-radius:18px; object-fit:cover; margin:0 auto 1.2rem; display:block; }
+    .industry-icon { width:100%; height:120px; object-fit:cover; border-radius:16px; margin-bottom:0.8rem; }
+    .industries-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:1.2rem; }
+    @media(max-width:700px){ .industries-grid{grid-template-columns:repeat(2,1fr);} }
+  </style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav class="site-nav" id="site-nav">
+  <div class="nav-inner">
+    <a href="index.html" class="nav-logo">
+      <div class="logo-icon"><img src="images/logo_leaf.png" alt="HydroFarm Pro logo" style="width:28px;height:28px;object-fit:cover;border-radius:6px;"/></div>
+      <span class="logo-text">Hydro<span>Farm</span> Pro</span>
+    </a>
+    <div class="nav-links">
+      <a href="index.html" class="nav-link">Home</a>
+      <a href="home2.html" class="nav-link">Home 2</a>
+      <a href="technology.html" class="nav-link">Technology</a>
+      <a href="services.html" class="nav-link">Services</a>
+      <a href="products.html" class="nav-link">Products</a>
+      <a href="dashboard.html" class="nav-link">Dashboard</a>
+      <a href="about.html" class="nav-link">About</a>
+      <a href="contact.html" class="nav-link">Contact</a>
+    </div>
+    <div class="nav-actions">
+      <button class="icon-btn" data-theme-toggle title="Toggle Dark Mode">&#9681;</button>
+      <button class="icon-btn" data-rtl-toggle id="rtl-label" title="Toggle RTL">RTL</button>
+      <a href="signup.html" class="nav-link nav-signup-btn">Sign Up</a>
+      <button class="hamburger" id="hamburger" aria-label="Open Menu">
+        <span class="hamburger-line"></span>
+        <span class="hamburger-line"></span>
+        <span class="hamburger-line"></span>
+      </button>
+    </div>
+  </div>
+</nav>
+
+<!-- Mobile Menu -->
+<div class="nav-overlay" id="nav-overlay"></div>
+<div class="mobile-menu" id="mobile-menu">
+  <div class="mobile-menu-header">
+    <a href="index.html" class="nav-logo">
+      <div class="logo-icon"><img src="images/logo_leaf.png" alt="" style="width:24px;height:24px;object-fit:cover;border-radius:5px;"/></div>
+      <span class="logo-text">Hydro<span>Farm</span> Pro</span>
+    </a>
+    <button class="mobile-close" id="mobile-close">&#10005;</button>
+  </div>
+  <nav class="mobile-nav-links">
+    <a href="index.html"><span class="nav-icon"><img src="images/hero_farm_overview.png" alt="" style="width:20px;height:20px;object-fit:cover;border-radius:4px;"/></span> Home</a>
+    <a href="home2.html"><span class="nav-icon"><img src="images/hero_vertical_farm.png" alt="" style="width:20px;height:20px;object-fit:cover;border-radius:4px;"/></span> Home 2</a>
+    <a href="technology.html"><span class="nav-icon"><img src="images/tech_iot.png" alt="" style="width:20px;height:20px;object-fit:cover;border-radius:4px;"/></span> Technology</a>
+    <a href="services.html"><span class="nav-icon"><img src="images/service_turnkey.png" alt="" style="width:20px;height:20px;object-fit:cover;border-radius:4px;"/></span> Services</a>
+    <a href="products.html"><span class="nav-icon"><img src="images/product_tower.png" alt="" style="width:20px;height:20px;object-fit:cover;border-radius:4px;"/></span> Products</a>
+    <a href="dashboard.html"><span class="nav-icon"><img src="images/tech_iot.png" alt="" style="width:20px;height:20px;object-fit:cover;border-radius:4px;"/></span> Dashboard</a>
+    <a href="about.html"><span class="nav-icon"><img src="images/about_team.png" alt="" style="width:20px;height:20px;object-fit:cover;border-radius:4px;"/></span> About</a>
+    <a href="contact.html"><span class="nav-icon"><img src="images/logo_leaf.png" alt="" style="width:20px;height:20px;object-fit:cover;border-radius:4px;"/></span> Contact</a>
+  </nav>
+  <div class="mobile-toggles">
+    <button class="icon-btn" data-theme-toggle>&#9681;</button>
+    <button class="icon-btn" data-rtl-toggle>RTL</button>
+  </div>
+  <div class="mobile-actions">
+    <a href="signup.html" class="btn btn-primary">Sign Up Free</a>
+    <a href="contact.html" class="btn btn-outline">Get a Quote</a>
+  </div>
+</div>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-pattern"></div>
+  <div class="container">
+    <div class="hero-content animate-fadeUp">
+      <div class="hero-badge">Certified Hydroponic Solutions</div>
+      <h1>Revolutionizing Farming with <span style="color:var(--accent)">Vertical Hydroponics</span></h1>
+      <p>Sustainable, high-yield farming solutions for modern businesses. Deploy a full smart farm in weeks — not months.</p>
+      <div class="hero-btns">
+        <a href="contact.html" class="btn btn-primary btn-lg">Request a Demo</a>
+        <a href="contact.html" class="btn btn-outline btn-lg" style="border-color:rgba(255,255,255,0.4);color:#fff;">Get a Quote</a>
+      </div>
+      <div class="floating-chips">
+        <span class="chip">90% Less Water</span>
+        <span class="chip">Year-Round Production</span>
+        <span class="chip">Zero Pesticides</span>
+        <span class="chip">Space Optimized</span>
+      </div>
+    </div>
+  </div>
+  <div class="hero-image">
+    <img src="images/hero_vertical_farm.png" alt="Hydroponic vertical farm interior with LED lighting"/>
+  </div>
+</section>
+
+<!-- KEY HIGHLIGHTS -->
+<section class="section">
+  <div class="container">
+    <div class="text-center reveal">
+      <div class="section-label">Why Choose Us</div>
+      <h2 class="section-title">Built for <span class="text-gradient">Business Scale</span></h2>
+      <p class="section-sub">Every system is engineered to maximise yield, minimise waste, and deliver rapid ROI for your operation.</p>
+    </div>
+    <div class="grid-4" style="margin-top:3rem;">
+      <div class="card reveal reveal-delay-1 highlight-card">
+        <img src="images/hero_farm_overview.png" alt="Water saving hydroponic system" class="highlight-icon" style="width:100%;height:120px;border-radius:12px;object-fit:cover;margin-bottom:1.2rem;"/>
+        <h3>90% Less Water</h3>
+        <p>Closed-loop recirculation systems drastically cut water consumption vs. traditional farming.</p>
+      </div>
+      <div class="card reveal reveal-delay-2 highlight-card">
+        <img src="images/tech_climate.png" alt="Year-round climate controlled farm" class="highlight-icon" style="width:100%;height:120px;border-radius:12px;object-fit:cover;margin-bottom:1.2rem;"/>
+        <h3>Year-Round Yield</h3>
+        <p>Climate-controlled environments ensure consistent harvests 365 days a year regardless of season.</p>
+      </div>
+      <div class="card reveal reveal-delay-3 highlight-card">
+        <img src="images/product_nutrients.png" alt="Zero pesticide nutrient solution" class="highlight-icon" style="width:100%;height:120px;border-radius:12px;object-fit:cover;margin-bottom:1.2rem;"/>
+        <h3>Zero Pesticides</h3>
+        <p>Sealed, controlled growing environments eliminate the need for any chemical pesticides.</p>
+      </div>
+      <div class="card reveal reveal-delay-4 highlight-card">
+        <img src="images/product_tower.png" alt="Space optimized vertical growing tower" class="highlight-icon" style="width:100%;height:120px;border-radius:12px;object-fit:cover;margin-bottom:1.2rem;"/>
+        <h3>Space Optimized</h3>
+        <p>Vertical stacking multiplies yield per square meter by up to 10x compared to soil farming.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TECHNOLOGY OVERVIEW -->
+<section class="section section-alt">
+  <div class="container">
+    <div class="text-center reveal">
+      <div class="section-label">Powered by Innovation</div>
+      <h2 class="section-title">Smart <span class="text-gradient">Technology</span> at the Core</h2>
+      <p class="section-sub">Our integrated tech stack gives you full visibility and control over every aspect of your farm.</p>
+    </div>
+    <div class="grid-3" style="margin-top:3rem;">
+      <div class="card reveal reveal-delay-1">
+        <img src="images/tech_iot.png" alt="IoT farm monitoring dashboard" style="width:100%;height:160px;object-fit:cover;border-radius:12px;margin-bottom:1.2rem;"/>
+        <h3>IoT Monitoring</h3>
+        <p>Real-time sensors track temperature, humidity, pH, EC, and CO2 levels across all growing zones, accessible from any device.</p>
+        <a href="technology.html" style="color:var(--accent);font-weight:600;font-size:0.92rem;display:inline-flex;align-items:center;gap:0.3rem;margin-top:1rem;">Learn more &rarr;</a>
+      </div>
+      <div class="card reveal reveal-delay-2">
+        <img src="images/product_nutrients.png" alt="Automated nutrient delivery" style="width:100%;height:160px;object-fit:cover;border-radius:12px;margin-bottom:1.2rem;"/>
+        <h3>Automated Nutrients</h3>
+        <p>Precision nutrient dosing systems deliver exactly the right formula at exactly the right time — zero waste, maximum uptake.</p>
+        <a href="technology.html" style="color:var(--accent);font-weight:600;font-size:0.92rem;display:inline-flex;align-items:center;gap:0.3rem;margin-top:1rem;">Learn more &rarr;</a>
+      </div>
+      <div class="card reveal reveal-delay-3">
+        <img src="images/tech_climate.png" alt="Climate control system" style="width:100%;height:160px;object-fit:cover;border-radius:12px;margin-bottom:1.2rem;"/>
+        <h3>Climate Control</h3>
+        <p>AI-driven HVAC and lighting schedules optimise growth cycles, adapting automatically to crop and season requirements.</p>
+        <a href="technology.html" style="color:var(--accent);font-weight:600;font-size:0.92rem;display:inline-flex;align-items:center;gap:0.3rem;margin-top:1rem;">Learn more &rarr;</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- INDUSTRIES -->
+<section class="section">
+  <div class="container">
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:5rem;align-items:center;">
+      <div class="reveal">
+        <div class="section-label">Industries Served</div>
+        <h2 class="section-title">Tailored for Your <span class="text-gradient">Industry</span></h2>
+        <p style="margin-bottom:2rem;">From upscale restaurants to government agricultural projects — we design and deploy systems that match your exact operational needs.</p>
+        <div style="display:flex;flex-direction:column;gap:1rem;">
+          <div style="display:flex;align-items:flex-start;gap:1rem;">
+            <img src="images/about_team.png" alt="Restaurant farm-to-table" style="width:48px;height:48px;border-radius:10px;object-fit:cover;flex-shrink:0;"/>
+            <div><h4>Restaurants &amp; Hotels</h4><p style="font-size:0.9rem;">Farm-to-table within your own building. Fresher produce, lower costs.</p></div>
+          </div>
+          <div style="display:flex;align-items:flex-start;gap:1rem;">
+            <img src="images/hero_farm_overview.png" alt="Supermarket fresh produce" style="width:48px;height:48px;border-radius:10px;object-fit:cover;flex-shrink:0;"/>
+            <div><h4>Retail &amp; Supermarkets</h4><p style="font-size:0.9rem;">In-store growing bays that attract customers and eliminate supply chain risk.</p></div>
+          </div>
+          <div style="display:flex;align-items:flex-start;gap:1rem;">
+            <img src="images/about_sustainability.png" alt="Export farm aerial view" style="width:48px;height:48px;border-radius:10px;object-fit:cover;flex-shrink:0;"/>
+            <div><h4>Export Businesses</h4><p style="font-size:0.9rem;">Consistent quality and quantity for premium international markets.</p></div>
+          </div>
+          <div style="display:flex;align-items:flex-start;gap:1rem;">
+            <img src="images/product_tower.png" alt="Agri startup vertical farm" style="width:48px;height:48px;border-radius:10px;object-fit:cover;flex-shrink:0;"/>
+            <div><h4>Agri Startups</h4><p style="font-size:0.9rem;">Turnkey business packages to get your venture profitable faster.</p></div>
+          </div>
+        </div>
+        <a href="services.html" class="btn btn-primary" style="margin-top:2rem;">Explore Solutions &rarr;</a>
+      </div>
+      <div class="reveal reveal-delay-2">
+        <div class="industries-grid">
+          <div style="text-align:center;">
+            <img src="images/about_team.png" alt="Restaurants" style="width:100%;height:110px;object-fit:cover;border-radius:14px;margin-bottom:0.5rem;"/>
+            <div style="font-weight:700;font-size:0.88rem;">Restaurants</div>
+          </div>
+          <div style="text-align:center;">
+            <img src="images/hero_farm_overview.png" alt="Supermarkets" style="width:100%;height:110px;object-fit:cover;border-radius:14px;margin-bottom:0.5rem;"/>
+            <div style="font-weight:700;font-size:0.88rem;">Supermarkets</div>
+          </div>
+          <div style="text-align:center;">
+            <img src="images/about_sustainability.png" alt="Export farms" style="width:100%;height:110px;object-fit:cover;border-radius:14px;margin-bottom:0.5rem;"/>
+            <div style="font-weight:700;font-size:0.88rem;">Export Farms</div>
+          </div>
+          <div style="text-align:center;">
+            <img src="images/service_turnkey.png" alt="Government projects" style="width:100%;height:110px;object-fit:cover;border-radius:14px;margin-bottom:0.5rem;"/>
+            <div style="font-weight:700;font-size:0.88rem;">Gov Projects</div>
+          </div>
+          <div style="text-align:center;">
+            <img src="images/product_tower.png" alt="Agri startups" style="width:100%;height:110px;object-fit:cover;border-radius:14px;margin-bottom:0.5rem;"/>
+            <div style="font-weight:700;font-size:0.88rem;">Agri Startups</div>
+          </div>
+          <div style="text-align:center;">
+            <img src="images/hero_vertical_farm.png" alt="Urban farming" style="width:100%;height:110px;object-fit:cover;border-radius:14px;margin-bottom:0.5rem;"/>
+            <div style="font-weight:700;font-size:0.88rem;">Urban Farms</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- STATS -->
+<section class="section section-alt">
+  <div class="container">
+    <div class="text-center reveal" style="margin-bottom:3rem;">
+      <div class="section-label">By The Numbers</div>
+      <h2 class="section-title">Results That <span class="text-gradient">Speak</span></h2>
+    </div>
+    <div class="grid-4">
+      <div class="stat-card reveal reveal-delay-1">
+        <div class="stat-number" data-counter="320" data-suffix="%">0%</div>
+        <div class="stat-label">Average Yield Increase</div>
+      </div>
+      <div class="stat-card reveal reveal-delay-2">
+        <div class="stat-number" data-counter="1400" data-suffix="+">0+</div>
+        <div class="stat-label">Farms Installed Globally</div>
+      </div>
+      <div class="stat-card reveal reveal-delay-3">
+        <div class="stat-number" data-counter="42">0</div>
+        <div class="stat-label">Countries Served</div>
+      </div>
+      <div class="stat-card reveal reveal-delay-4">
+        <div class="stat-number" data-counter="90" data-suffix="%">0%</div>
+        <div class="stat-label">Less Water Used</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section class="section">
+  <div class="container">
+    <div class="text-center reveal">
+      <div class="section-label">Client Success</div>
+      <h2 class="section-title">Trusted by <span class="text-gradient">Industry Leaders</span></h2>
+    </div>
+    <div class="grid-3" style="margin-top:3rem;">
+      <div class="testimonial-card reveal reveal-delay-1">
+        <div class="test-stars" style="color:var(--gold);font-size:1.1rem;margin-bottom:1rem;">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+        <p class="test-text">"HydroFarm Pro transformed our restaurant's supply chain. We grow 80% of our herbs and microgreens in-house now — freshness has never been better."</p>
+        <div class="test-author">
+          <div class="test-avatar">AM</div>
+          <div><div class="test-name">Ahmad Malik</div><div class="test-role">Executive Chef, The Green Table</div></div>
+        </div>
+      </div>
+      <div class="testimonial-card reveal reveal-delay-2">
+        <div class="test-stars" style="color:var(--gold);font-size:1.1rem;margin-bottom:1rem;">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+        <p class="test-text">"Our ROI was achieved in 14 months. The IoT dashboard gives us real-time alerts that have saved entire batches from spoilage multiple times."</p>
+        <div class="test-author">
+          <div class="test-avatar">SR</div>
+          <div><div class="test-name">Sara Rahman</div><div class="test-role">Operations Director, FreshMart</div></div>
+        </div>
+      </div>
+      <div class="testimonial-card reveal reveal-delay-3">
+        <div class="test-stars" style="color:var(--gold);font-size:1.1rem;margin-bottom:1rem;">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+        <p class="test-text">"The team handled everything — design, installation, training. We went from zero to exporting premium lettuce in under 3 months."</p>
+        <div class="test-author">
+          <div class="test-avatar">KP</div>
+          <div><div class="test-name">Karim Patel</div><div class="test-role">CEO, GreenExport Ltd</div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA BANNER -->
+<section class="section">
+  <div class="container">
+    <div class="cta-banner reveal">
+      <div class="section-label" style="color:#fff;background:rgba(255,255,255,0.15);border-color:rgba(255,255,255,0.3);">Ready to Grow?</div>
+      <h2>Start Your Vertical Farm <span style="color:var(--accent2)">Today</span></h2>
+      <p>Join 1,400+ businesses already growing smarter. Our experts will design a system tailored to your space, budget, and goals.</p>
+      <div class="cta-btns">
+        <a href="contact.html" class="btn btn-gold btn-lg">Request a Free Demo</a>
+        <a href="contact.html" class="btn btn-light btn-lg">Talk to an Expert</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <div class="footer-logo">
+          <img src="images/logo_leaf.png" alt="HydroFarm Pro" style="width:28px;height:28px;object-fit:cover;border-radius:6px;"/>
+          Hydro<span>Farm</span> Pro
+        </div>
+        <p>The world's leading B2B hydroponic vertical farm solutions provider. Building sustainable food systems for a better tomorrow.</p>
+        <div class="social-links" style="margin-top:1.5rem;">
+          <a href="#" class="social-link">Li</a>
+          <a href="#" class="social-link">Tw</a>
+          <a href="#" class="social-link">YT</a>
+          <a href="#" class="social-link">Fb</a>
+        </div>
+      </div>
+      <div>
+        <div class="footer-heading">Solutions</div>
+        <ul class="footer-links">
+          <li><a href="services.html">Turnkey Setup</a></li>
+          <li><a href="services.html">Smart Automation</a></li>
+          <li><a href="services.html">Consulting</a></li>
+          <li><a href="technology.html">Technology</a></li>
+          <li><a href="products.html">Products</a></li>
+        </ul>
+      </div>
+      <div>
+        <div class="footer-heading">Company</div>
+        <ul class="footer-links">
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="about.html">Our Team</a></li>
+          <li><a href="about.html">Certifications</a></li>
+          <li><a href="contact.html">Contact</a></li>
+          <li><a href="dashboard.html">B2B Portal</a></li>
+        </ul>
+      </div>
+      <div>
+        <div class="footer-heading">Get In Touch</div>
+        <ul class="footer-contact">
+          <li><span>&#8962;</span><span>42 Green Tower, Dubai, UAE</span></li>
+          <li><span>&#128222;</span><span>+971 4 000 0000</span></li>
+          <li><span>&#9993;</span><span>info@hydrofarm.pro</span></li>
+          <li><span>&#9200;</span><span>Mon–Sat, 9AM–6PM GST</span></li>
+        </ul>
+        <a href="contact.html" class="btn btn-outline btn-sm" style="margin-top:1rem;">Get a Quote</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>&copy; 2026 HydroFarm Pro. All rights reserved.</span>
+      <span>Sustainable Farming</span>
+    </div>
+  </div>
+</footer>
+
+<a href="#" class="back-to-top" id="back-to-top">&#8679;</a>
+<script src="js/main.js"></script>
+</body>
+</html>

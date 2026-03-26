@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>HydroFarm Pro — Products</title>
+  <meta name="description" content="Commercial vertical farming units, nutrient solutions, LED grow lights, and automation systems from HydroFarm Pro."/>
+  <link rel="stylesheet" href="css/style.css"/>
+  <link rel="stylesheet" href="css/nav.css"/>
+  <style>
+    .product-card { background:var(--bg-card); border-radius:var(--radius-lg); border:1px solid var(--border-light); overflow:hidden; box-shadow:var(--shadow-card); transition:transform 0.3s,box-shadow 0.3s; }
+    .product-card:hover { transform:translateY(-8px); box-shadow:var(--shadow-lg); }
+    .product-img { width:100%; height:200px; object-fit:cover; display:block; }
+    .product-body { padding:1.8rem; }
+    .product-tags { display:flex; gap:0.4rem; flex-wrap:wrap; margin-bottom:1rem; }
+    .product-price { font-family:'Outfit',sans-serif; font-size:1.6rem; font-weight:800; color:var(--primary); margin:1rem 0; }
+    [data-theme="dark"] .product-price { color:var(--accent); }
+    .product-price sub { font-size:1rem; color:var(--text-muted); margin-left:0.3rem; }
+    .product-specs { display:flex; flex-direction:column; gap:0.5rem; margin-bottom:1.5rem; }
+    .product-spec-row { display:flex; justify-content:space-between; font-size:0.85rem; padding:0.4rem 0; border-bottom:1px solid var(--border-light); }
+    .product-spec-row:last-child { border-bottom:none; }
+    .spec-label { color:var(--text-muted); }
+    .spec-value { font-weight:600; color:var(--text-primary); }
+    .filter-bar { display:flex; gap:0.7rem; flex-wrap:wrap; margin-bottom:3rem; }
+    .filter-btn { padding:0.5em 1.3em; border-radius:50px; font-size:0.88rem; font-weight:600; background:var(--bg-alt); border:1.5px solid var(--border); color:var(--text-secondary); cursor:pointer; transition:all 0.2s; }
+    .filter-btn.active, .filter-btn:hover { background:var(--primary); color:#fff; border-color:var(--primary); }
+    .feature-icon-img { width:52px; height:52px; border-radius:12px; object-fit:cover; margin:0 auto 0.8rem; display:block; }
+  </style>
+</head>
+<body>
+<!-- NAV -->
+<nav class="site-nav" id="site-nav">
+  <div class="nav-inner">
+    <a href="index.html" class="nav-logo"><div class="logo-icon"><img src="images/logo_leaf.png" alt="" style="width:28px;height:28px;object-fit:cover;border-radius:6px;"/></div><span class="logo-text">Hydro<span>Farm</span> Pro</span></a>
+    <div class="nav-links"><a href="index.html" class="nav-link">Home</a><a href="home2.html" class="nav-link">Home 2</a><a href="technology.html" class="nav-link">Technology</a><a href="services.html" class="nav-link">Services</a><a href="products.html" class="nav-link">Products</a><a href="dashboard.html" class="nav-link">Dashboard</a><a href="about.html" class="nav-link">About</a><a href="contact.html" class="nav-link">Contact</a></div>
+    <div class="nav-actions"><button class="icon-btn" data-theme-toggle>&#9681;</button><button class="icon-btn" data-rtl-toggle id="rtl-label">RTL</button><a href="signup.html" class="nav-link nav-signup-btn">Sign Up</a><button class="hamburger" id="hamburger"><span class="hamburger-line"></span><span class="hamburger-line"></span><span class="hamburger-line"></span></button></div>
+  </div>
+</nav>
+<div class="nav-overlay" id="nav-overlay"></div>
+<div class="mobile-menu" id="mobile-menu">
+  <div class="mobile-menu-header"><a href="index.html" class="nav-logo"><div class="logo-icon"><img src="images/logo_leaf.png" alt="" style="width:24px;height:24px;object-fit:cover;border-radius:5px;"/></div><span class="logo-text">Hydro<span>Farm</span> Pro</span></a><button class="mobile-close" id="mobile-close">&#10005;</button></div>
+  <nav class="mobile-nav-links"><a href="index.html">Home</a><a href="home2.html">Home 2</a><a href="technology.html">Technology</a><a href="services.html">Services</a><a href="products.html">Products</a><a href="dashboard.html">Dashboard</a><a href="about.html">About</a><a href="contact.html">Contact</a></nav>
+  <div class="mobile-toggles"><button class="icon-btn" data-theme-toggle>&#9681;</button><button class="icon-btn" data-rtl-toggle>RTL</button></div>
+  <div class="mobile-actions"><a href="signup.html" class="btn btn-primary">Sign Up Free</a><a href="contact.html" class="btn btn-outline">Get a Quote</a></div>
+</div>
+
+<!-- PAGE HERO -->
+<section class="page-hero">
+  <div class="container">
+    <nav class="breadcrumb"><a href="index.html">Home</a><span>/</span><span style="color:#fff;">Products</span></nav>
+    <h1>Premium <span style="color:var(--accent2)">Farm Products</span></h1>
+    <p>Commercial-grade vertical farming equipment, nutrient solutions, and automation hardware designed for serious growers.</p>
+  </div>
+</section>
+
+<!-- PRODUCTS -->
+<section class="section">
+  <div class="container">
+    <div class="filter-bar reveal">
+      <button class="filter-btn active">All Products</button>
+      <button class="filter-btn">Farming Units</button>
+      <button class="filter-btn">Nutrients</button>
+      <button class="filter-btn">Lighting</button>
+      <button class="filter-btn">Automation</button>
+    </div>
+
+    <div class="grid-3 reveal">
+      <!-- Tower -->
+      <div class="product-card">
+        <img src="images/product_tower.png" alt="VF-Tower Pro 500 vertical farming tower unit" class="product-img"/>
+        <div class="product-body">
+          <div class="product-tags"><span class="tag">Best Seller</span><span class="tag">Farming Units</span></div>
+          <h3>VF-Tower Pro 500</h3>
+          <p style="font-size:0.92rem;">Modular 5-level growing tower with integrated lighting, irrigation, and nutrient delivery. 500g/week yield per unit.</p>
+          <div class="product-specs">
+            <div class="product-spec-row"><span class="spec-label">Levels</span><span class="spec-value">5 Tiers</span></div>
+            <div class="product-spec-row"><span class="spec-label">Footprint</span><span class="spec-value">1.2 x 0.6m</span></div>
+            <div class="product-spec-row"><span class="spec-label">Weekly Yield</span><span class="spec-value">500g+</span></div>
+            <div class="product-spec-row"><span class="spec-label">Power</span><span class="spec-value">120W LED</span></div>
+          </div>
+          <div class="product-price">$4,800 <sub>/ unit</sub></div>
+          <a href="contact.html" class="btn btn-primary" style="width:100%;justify-content:center;">Request Quote</a>
+        </div>
+      </div>
+
+      <!-- Wall System -->
+      <div class="product-card">
+        <img src="images/hero_farm_overview.png" alt="VF-Wall hydroponic growing system" class="product-img"/>
+        <div class="product-body">
+          <div class="product-tags"><span class="tag">Enterprise</span><span class="tag">Farming Units</span></div>
+          <h3>VF-Wall System 2000</h3>
+          <p style="font-size:0.92rem;">Full wall-mounted hydroponic system with 8 growing channels. Ideal for restaurants, retail displays, and hotel lobbies.</p>
+          <div class="product-specs">
+            <div class="product-spec-row"><span class="spec-label">Channels</span><span class="spec-value">8 NFT</span></div>
+            <div class="product-spec-row"><span class="spec-label">Coverage</span><span class="spec-value">3m x 2.4m</span></div>
+            <div class="product-spec-row"><span class="spec-label">Capacity</span><span class="spec-value">320 plants</span></div>
+            <div class="product-spec-row"><span class="spec-label">Display</span><span class="spec-value">IoT touchscreen</span></div>
+          </div>
+          <div class="product-price">$12,500 <sub>/ system</sub></div>
+          <a href="contact.html" class="btn btn-primary" style="width:100%;justify-content:center;">Request Quote</a>
+        </div>
+      </div>
+
+      <!-- Container farm -->
+      <div class="product-card">
+        <img src="images/hero_vertical_farm.png" alt="ContainerFarm 20ft mobile hydroponic farm" class="product-img"/>
+        <div class="product-body">
+          <div class="product-tags"><span class="tag">New</span><span class="tag">Farming Units</span></div>
+          <h3>ContainerFarm 20ft</h3>
+          <p style="font-size:0.92rem;">A complete vertical farm in a 20-foot container — fully climate controlled, deployable anywhere in 14 days.</p>
+          <div class="product-specs">
+            <div class="product-spec-row"><span class="spec-label">Size</span><span class="spec-value">20ft ISO</span></div>
+            <div class="product-spec-row"><span class="spec-label">Capacity</span><span class="spec-value">2,400 plants</span></div>
+            <div class="product-spec-row"><span class="spec-label">Monthly Yield</span><span class="spec-value">600kg</span></div>
+            <div class="product-spec-row"><span class="spec-label">Power</span><span class="spec-value">Grid / Solar</span></div>
+          </div>
+          <div class="product-price">$48,000 <sub>/ unit</sub></div>
+          <a href="contact.html" class="btn btn-primary" style="width:100%;justify-content:center;">Request Quote</a>
+        </div>
+      </div>
+
+      <!-- Nutrient Solution -->
+      <div class="product-card">
+        <img src="images/product_nutrients.png" alt="ProGrow hydroponic nutrient solution A+B" class="product-img"/>
+        <div class="product-body">
+          <div class="product-tags"><span class="tag">Nutrients</span><span class="tag">Consumable</span></div>
+          <h3>ProGrow Nutrient Kit A+B</h3>
+          <p style="font-size:0.92rem;">Complete 2-part nutrient concentrate for leafy greens, herbs, and fruiting crops in any hydroponic system.</p>
+          <div class="product-specs">
+            <div class="product-spec-row"><span class="spec-label">Parts</span><span class="spec-value">2-Part (A+B)</span></div>
+            <div class="product-spec-row"><span class="spec-label">Volume</span><span class="spec-value">10L + 10L</span></div>
+            <div class="product-spec-row"><span class="spec-label">Coverage</span><span class="spec-value">2,000L reservoir</span></div>
+            <div class="product-spec-row"><span class="spec-label">pH Range</span><span class="spec-value">5.5–6.5</span></div>
+          </div>
+          <div class="product-price">$180 <sub>/ set</sub></div>
+          <a href="contact.html" class="btn btn-primary" style="width:100%;justify-content:center;">Order Now</a>
+        </div>
+      </div>
+
+      <!-- LED Panel -->
+      <div class="product-card">
+        <img src="images/product_led.png" alt="SpectraGrow commercial LED grow light 640W" class="product-img"/>
+        <div class="product-body">
+          <div class="product-tags"><span class="tag">Lighting</span><span class="tag">Top Rated</span></div>
+          <h3>SpectraGrow LED 640W</h3>
+          <p style="font-size:0.92rem;">Full-spectrum commercial LED panel with programmable photoperiod, dimming, and UV/IR boosters for maximum photosynthesis.</p>
+          <div class="product-specs">
+            <div class="product-spec-row"><span class="spec-label">Power</span><span class="spec-value">640W True</span></div>
+            <div class="product-spec-row"><span class="spec-label">PPE</span><span class="spec-value">2.6 µmol/J</span></div>
+            <div class="product-spec-row"><span class="spec-label">Coverage</span><span class="spec-value">2.4 x 2.4m</span></div>
+            <div class="product-spec-row"><span class="spec-label">Lifespan</span><span class="spec-value">50,000 hrs</span></div>
+          </div>
+          <div class="product-price">$920 <sub>/ unit</sub></div>
+          <a href="contact.html" class="btn btn-primary" style="width:100%;justify-content:center;">Order Now</a>
+        </div>
+      </div>
+
+      <!-- Automation Controller -->
+      <div class="product-card">
+        <img src="images/product_automation.png" alt="SmartFarm Controller SC-1 IoT hub" class="product-img"/>
+        <div class="product-body">
+          <div class="product-tags"><span class="tag">Automation</span><span class="tag">New</span></div>
+          <h3>SmartFarm Controller SC-1</h3>
+          <p style="font-size:0.92rem;">Central automation hub connecting all farm sensors, pumps, lights, and dosing systems into one AI-driven control unit.</p>
+          <div class="product-specs">
+            <div class="product-spec-row"><span class="spec-label">Zones</span><span class="spec-value">Up to 16</span></div>
+            <div class="product-spec-row"><span class="spec-label">Sensors</span><span class="spec-value">128 inputs</span></div>
+            <div class="product-spec-row"><span class="spec-label">Connectivity</span><span class="spec-value">WiFi / 4G / LAN</span></div>
+            <div class="product-spec-row"><span class="spec-label">Display</span><span class="spec-value">7" touchscreen</span></div>
+          </div>
+          <div class="product-price">$2,400 <sub>/ unit</sub></div>
+          <a href="contact.html" class="btn btn-primary" style="width:100%;justify-content:center;">Order Now</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FEATURES BANNER -->
+<section class="section section-alt">
+  <div class="container">
+    <div class="grid-4">
+      <div class="reveal reveal-delay-1" style="text-align:center;">
+        <img src="images/logo_leaf.png" alt="Warranty" class="feature-icon-img" style="background:var(--bg-card);"/>
+        <h4>2–5 Year Warranty</h4>
+        <p style="font-size:0.9rem;">Comprehensive warranty and replacement guarantee on every product.</p>
+      </div>
+      <div class="reveal reveal-delay-2" style="text-align:center;">
+        <img src="images/about_sustainability.png" alt="Global shipping" class="feature-icon-img"/>
+        <h4>Global Shipping</h4>
+        <p style="font-size:0.9rem;">Freight and customs handling to 42+ countries with full track and trace.</p>
+      </div>
+      <div class="reveal reveal-delay-3" style="text-align:center;">
+        <img src="images/service_turnkey.png" alt="Installation support" class="feature-icon-img"/>
+        <h4>Installation Support</h4>
+        <p style="font-size:0.9rem;">Remote or on-site installation included with every order.</p>
+      </div>
+      <div class="reveal reveal-delay-4" style="text-align:center;">
+        <img src="images/product_nutrients.png" alt="Flexible payment" class="feature-icon-img"/>
+        <h4>Flexible Payment</h4>
+        <p style="font-size:0.9rem;">B2B payment plans — 12–36 months at 0% interest.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="section">
+  <div class="container">
+    <div class="cta-banner reveal">
+      <h2>Need a Custom <span style="color:var(--accent2)">Product Bundle?</span></h2>
+      <p>Our engineers will design a complete product package tailored to your farm size, crop type, and budget.</p>
+      <div class="cta-btns">
+        <a href="contact.html" class="btn btn-gold btn-lg">Get Custom Quote</a>
+        <a href="services.html" class="btn btn-light btn-lg">View Services</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand"><div class="footer-logo"><img src="images/logo_leaf.png" alt="" style="width:26px;height:26px;object-fit:cover;border-radius:5px;"/> Hydro<span>Farm</span> Pro</div><p>The world's leading B2B hydroponic vertical farm solutions provider.</p><div class="social-links" style="margin-top:1.5rem;"><a href="#" class="social-link">Li</a><a href="#" class="social-link">Tw</a><a href="#" class="social-link">YT</a><a href="#" class="social-link">Fb</a></div></div>
+      <div><div class="footer-heading">Solutions</div><ul class="footer-links"><li><a href="services.html">Services</a></li><li><a href="technology.html">Technology</a></li><li><a href="products.html">Products</a></li></ul></div>
+      <div><div class="footer-heading">Company</div><ul class="footer-links"><li><a href="about.html">About Us</a></li><li><a href="contact.html">Contact</a></li><li><a href="dashboard.html">B2B Portal</a></li></ul></div>
+      <div><div class="footer-heading">Get In Touch</div><ul class="footer-contact"><li><span>&#8962;</span><span>42 Green Tower, Dubai, UAE</span></li><li><span>&#128222;</span><span>+971 4 000 0000</span></li><li><span>&#9993;</span><span>info@hydrofarm.pro</span></li></ul></div>
+    </div>
+    <div class="footer-bottom"><span>&copy; 2026 HydroFarm Pro. All rights reserved.</span><span>Sustainable Farming</span></div>
+  </div>
+</footer>
+<a href="#" class="back-to-top" id="back-to-top">&#8679;</a>
+<script src="js/main.js"></script>
+<script>
+document.querySelectorAll('.filter-btn').forEach(btn => {
+  btn.addEventListener('click', () => {
+    document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+  });
+});
+</script>
+</body>
+</html>

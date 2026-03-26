@@ -35,6 +35,8 @@
 
 <!-- DASHBOARD WRAPPER -->
 <div class="dashboard-wrapper">
+  <!-- HAMBURGER TOGGLE (mobile) -->
+  <button class="dash-hamburger" id="dash-hamburger"><span class="dash-hamburger-line"></span><span class="dash-hamburger-line"></span><span class="dash-hamburger-line"></span></button>
 
   <!-- SIDEBAR -->
   <aside class="dash-sidebar" id="dash-sidebar">
@@ -96,7 +98,6 @@
     <!-- OVERVIEW -->
     <div id="overview-panel">
       <div class="dash-header">
-        <button class="dash-hamburger" id="dash-hamburger"><span class="dash-hamburger-line"></span><span class="dash-hamburger-line"></span><span class="dash-hamburger-line"></span></button>
         <div>
           <div class="dash-page-title">Farm Overview</div>
           <div class="dash-date" id="dash-clock">Loading...</div>
@@ -169,7 +170,6 @@
     <!-- MONITORING -->
     <div id="monitoring-panel" style="display:none;">
       <div class="dash-header">
-        <button class="dash-hamburger" id="dash-hamburger"><span class="dash-hamburger-line"></span><span class="dash-hamburger-line"></span><span class="dash-hamburger-line"></span></button>
         <div>
           <div class="dash-page-title">Live Monitoring</div>
           <div class="dash-date" style="display:flex;align-items:center;gap:0.6rem;">
@@ -208,7 +208,6 @@
     <!-- ANALYTICS -->
     <div id="analytics-panel" style="display:none;">
       <div class="dash-header">
-        <button class="dash-hamburger" id="dash-hamburger"><span class="dash-hamburger-line"></span><span class="dash-hamburger-line"></span><span class="dash-hamburger-line"></span></button>
         <div><div class="dash-page-title">Analytics</div><div class="dash-date">2026 — Full Year</div></div>
         <div class="dash-header-actions"><select class="form-control" style="width:auto;padding:0.4rem 1rem;font-size:0.85rem;"><option>2026</option><option>2025</option></select></div>
       </div>
@@ -227,7 +226,6 @@
     <!-- ORDERS -->
     <div id="orders-panel" style="display:none;">
       <div class="dash-header">
-        <button class="dash-hamburger" id="dash-hamburger"><span class="dash-hamburger-line"></span><span class="dash-hamburger-line"></span><span class="dash-hamburger-line"></span></button>
         <div><div class="dash-page-title">Orders</div><div class="dash-date">3 active orders</div></div>
         <div class="dash-header-actions"><a href="products.html" class="btn btn-primary btn-sm">New Order</a></div>
       </div>
@@ -248,7 +246,6 @@
     <!-- SUPPORT TICKETS -->
     <div id="tickets-panel" style="display:none;">
       <div class="dash-header">
-        <button class="dash-hamburger" id="dash-hamburger"><span class="dash-hamburger-line"></span><span class="dash-hamburger-line"></span><span class="dash-hamburger-line"></span></button>
         <div><div class="dash-page-title">Support Tickets</div><div class="dash-date">2 open tickets</div></div>
         <div class="dash-header-actions"><button class="btn btn-primary btn-sm">New Ticket</button></div>
       </div>
@@ -295,20 +292,35 @@ function switchDashTab(tab) {
   });
 }
 </script>
+
 <script>
-  const dashHamburger = document.getElementById('dash-hamburger');
-  const dashSidebar = document.getElementById('dash-sidebar');
-  if (dashHamburger && dashSidebar) {
-    dashHamburger.addEventListener('click', (e) => {
+  (function() {
+    var hamburger = document.getElementById('dash-hamburger');
+    var sidebar = document.getElementById('dash-sidebar');
+    if (!hamburger || !sidebar) return;
+
+    hamburger.addEventListener('click', function(e) {
       e.stopPropagation();
-      dashSidebar.classList.toggle('open');
+      sidebar.classList.toggle('open');
     });
-    document.addEventListener('click', (e) => {
-      if (dashSidebar.classList.contains('open') && !dashSidebar.contains(e.target)) {
-        dashSidebar.classList.remove('open');
+
+    // Close sidebar when clicking outside
+    document.addEventListener('click', function(e) {
+      if (sidebar.classList.contains('open') && !sidebar.contains(e.target) && e.target !== hamburger) {
+        sidebar.classList.remove('open');
       }
     });
-  }
+
+    // Close sidebar when a nav link is clicked (switching menu items)
+    var navLinks = sidebar.querySelectorAll('.dash-nav-link');
+    navLinks.forEach(function(link) {
+      link.addEventListener('click', function() {
+        if (window.innerWidth < 900) {
+          sidebar.classList.remove('open');
+        }
+      });
+    });
+  })();
 </script>
 </body>
 </html>

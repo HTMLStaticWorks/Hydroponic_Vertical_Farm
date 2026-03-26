@@ -280,7 +280,11 @@
 }
 @media (max-width: 900px) {
   .dash-hamburger { display: flex; }
+  [dir="rtl"] .dash-hamburger { left: auto; right: 1rem; }
   .dash-header { padding-left: 3.5rem; }
+  [dir="rtl"] .dash-header { padding-left: 0; padding-right: 3.5rem; }
+  .dash-sidebar-header { padding-left: 4.2rem; }
+  [dir="rtl"] .dash-sidebar-header { padding-left: 1.5rem; padding-right: 4.2rem; }
   .dash-sidebar {
     transform: translateX(-100%);
     position: fixed; top: 0; bottom: 0; left: 0; z-index: 1000;

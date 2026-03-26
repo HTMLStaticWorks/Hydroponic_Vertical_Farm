@@ -70,6 +70,7 @@ body {
   line-height: 1.65;
   transition: background var(--transition), color var(--transition);
   overflow-x: hidden;
+  text-align: center; /* Global centering as requested */
 }
 [dir="rtl"] { direction: rtl; }
 [dir="rtl"] .nav-links { flex-direction: row-reverse; }
@@ -93,6 +94,8 @@ p  { color: var(--text-secondary); font-size: 1.02rem; }
 .section-alt { background: var(--bg-alt); }
 .section-dark { background: var(--primary-dark); }
 .text-center { text-align: center; }
+.text-left { text-align: left; }
+.text-right { text-align: right; }
 .text-gradient {
   background: linear-gradient(135deg, var(--primary), var(--accent));
   -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
@@ -253,11 +256,11 @@ select.form-control { appearance: none; cursor: pointer; }
   background-size: 32px 32px;
   z-index: 1;
 }
-.hero .container { position: relative; z-index: 2; }
-.hero-content { max-width: 660px; }
+.hero .container { position: relative; z-index: 2; width: 100%; display: flex; flex-direction: column; align-items: center; justify-content: center; }
+.hero-content { max-width: 800px; text-align: center; }
 .hero h1 { color: #fff; margin-bottom: 1.3rem; }
-.hero p { color: rgba(255,255,255,0.75); font-size: 1.12rem; margin-bottom: 2.2rem; max-width: 540px; }
-.hero-btns { display: flex; gap: 1rem; flex-wrap: wrap; }
+.hero p { color: rgba(255,255,255,0.75); font-size: 1.12rem; margin: 0 auto 2.2rem; max-width: 640px; }
+.hero-btns { display: flex; gap: 1rem; flex-wrap: wrap; justify-content: center; }
 .hero-badge {
   display: inline-flex; align-items: center; gap: 0.5rem;
   background: rgba(82,183,136,0.18); border: 1px solid rgba(82,183,136,0.35);
@@ -276,7 +279,7 @@ select.form-control { appearance: none; cursor: pointer; }
 
 /* ── Floating Feature Chips ── */
 .floating-chips {
-  display: flex; flex-wrap: wrap; gap: 0.7rem;
+  display: flex; flex-wrap: wrap; gap: 0.7rem; justify-content: center;
   margin-top: 2rem;
 }
 .chip {
@@ -294,7 +297,14 @@ select.form-control { appearance: none; cursor: pointer; }
 }
 .cta-banner::before {
   content: ''; position: absolute; inset: 0;
-  background: radial-gradient(ellipse at 50% 50%, rgba(82,183,136,0.25), transparent 70%);
+  background: linear-gradient(135deg, rgba(20,77,54,0.85), rgba(30,111,76,0.75));
+  z-index: 0;
+}
+.cta-banner.bg-image {
+  background-size: cover; background-position: center; border: none;
+}
+.cta-banner.bg-image::before {
+  background: linear-gradient(135deg, rgba(5,26,16,0.9), rgba(0,0,0,0.6));
 }
 .cta-banner > * { position: relative; z-index: 1; }
 .cta-banner h2 { color: #fff; margin-bottom: 1rem; }
@@ -366,8 +376,8 @@ select.form-control { appearance: none; cursor: pointer; }
 }
 .pricing-price { font-family: 'Outfit',sans-serif; font-size: 3rem; font-weight: 800; line-height: 1; margin: 1.5rem 0; }
 .pricing-price sup { font-size: 1.2rem; vertical-align: super; }
-.pricing-list { text-align: left; margin: 1.5rem 0; }
-.pricing-list li { padding: 0.5rem 0; font-size: 0.93rem; color: var(--text-secondary); border-bottom: 1px solid var(--border-light); display: flex; align-items: center; gap: 0.6rem; }
+.pricing-list { text-align: left; margin: 1.5rem 0; display: inline-block; width: 100%; }
+.pricing-list li { padding: 0.5rem 0; font-size: 0.93rem; color: var(--text-secondary); border-bottom: 1px solid var(--border-light); display: flex; align-items: center; justify-content: center; gap: 0.6rem; }
 .pricing-list li::before { content: '✓'; color: var(--accent); font-weight: 700; }
 
 /* ── Accordion ── */
@@ -477,11 +487,11 @@ select.form-control { appearance: none; cursor: pointer; }
   width: 48px; height: 48px; border-radius: 12px;
   background: rgba(82,183,136,0.12); border: 1px solid rgba(82,183,136,0.25);
   display: flex; align-items: center; justify-content: center;
-  font-size: 1.3rem; flex-shrink: 0;
+  font-size: 1.3rem; flex-shrink: 0; margin: 0 auto;
 }
 
 /* ── Industry / Feature Tabs ── */
-.tabs { display: flex; gap: 0.5rem; flex-wrap: wrap; margin-bottom: 2.5rem; }
+.tabs { display: flex; gap: 0.5rem; flex-wrap: wrap; justify-content: center; margin-bottom: 2.5rem; }
 .tab-btn {
   padding: 0.55em 1.3em; border-radius: 50px;
   font-size: 0.9rem; font-weight: 600; color: var(--text-muted);

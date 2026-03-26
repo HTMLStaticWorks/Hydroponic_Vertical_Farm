@@ -52,7 +52,7 @@
 <div class="mobile-menu" id="mobile-menu">
   <div class="mobile-menu-header">
     <a href="index.html" class="nav-logo">
-      <div class="logo-icon"><img src="images/logo_leaf.png" alt="" style="width:24px;height:24px;object-fit:cover;border-radius:5px;"/></div>
+    
       <span class="logo-text">Hydro<span>Farm</span> Pro</span>
     </a>
     <button class="mobile-close" id="mobile-close">&#10005;</button>
@@ -78,8 +78,8 @@
 </div>
 
 <!-- HERO -->
-<section class="hero">
-  <div class="hero-bg"></div>
+<section class="hero text-center">
+  <div class="hero-bg" style="background: url('images/hero_bg_main.png') center/cover no-repeat;"></div>
   <div class="hero-pattern"></div>
   <div class="container">
     <div class="hero-content animate-fadeUp">
@@ -98,9 +98,7 @@
       </div>
     </div>
   </div>
-  <div class="hero-image">
-    <img src="images/hero_vertical_farm.png" alt="Hydroponic vertical farm interior with LED lighting"/>
-  </div>
+ 
 </section>
 
 <!-- KEY HIGHLIGHTS -->
@@ -170,58 +168,30 @@
 <!-- INDUSTRIES -->
 <section class="section">
   <div class="container">
-    <div style="display:grid;grid-template-columns:1fr 1fr;gap:5rem;align-items:center;">
-      <div class="reveal">
+    <div style="display:flex;flex-direction:column;align-items:center;margin-bottom:4rem;">
+      <div class="reveal text-center">
         <div class="section-label">Industries Served</div>
         <h2 class="section-title">Tailored for Your <span class="text-gradient">Industry</span></h2>
         <p style="margin-bottom:2rem;">From upscale restaurants to government agricultural projects — we design and deploy systems that match your exact operational needs.</p>
-        <div style="display:flex;flex-direction:column;gap:1rem;">
-          <div style="display:flex;align-items:flex-start;gap:1rem;">
-            <img src="images/about_team.png" alt="Restaurant farm-to-table" style="width:48px;height:48px;border-radius:10px;object-fit:cover;flex-shrink:0;"/>
-            <div><h4>Restaurants &amp; Hotels</h4><p style="font-size:0.9rem;">Farm-to-table within your own building. Fresher produce, lower costs.</p></div>
+        <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:2rem;margin-bottom:2rem;">
+          <div style="display:flex;flex-direction:column;align-items:center;text-align:center;gap:1rem;">
+            <img src="images/about_team.png" alt="Restaurant farm-to-table" style="width:64px;height:64px;border-radius:14px;object-fit:cover;flex-shrink:0;"/>
+            <div><h4>Restaurants &amp; Hotels</h4><p style="font-size:0.9rem;">Farm-to-table within your own building.</p></div>
           </div>
-          <div style="display:flex;align-items:flex-start;gap:1rem;">
-            <img src="images/hero_farm_overview.png" alt="Supermarket fresh produce" style="width:48px;height:48px;border-radius:10px;object-fit:cover;flex-shrink:0;"/>
-            <div><h4>Retail &amp; Supermarkets</h4><p style="font-size:0.9rem;">In-store growing bays that attract customers and eliminate supply chain risk.</p></div>
+          <div style="display:flex;flex-direction:column;align-items:center;text-align:center;gap:1rem;">
+            <img src="images/hero_farm_overview.png" alt="Supermarket fresh produce" style="width:64px;height:64px;border-radius:14px;object-fit:cover;flex-shrink:0;"/>
+            <div><h4>Retail &amp; Supermarkets</h4><p style="font-size:0.9rem;">In-store growing bays that attract customers.</p></div>
           </div>
-          <div style="display:flex;align-items:flex-start;gap:1rem;">
-            <img src="images/about_sustainability.png" alt="Export farm aerial view" style="width:48px;height:48px;border-radius:10px;object-fit:cover;flex-shrink:0;"/>
-            <div><h4>Export Businesses</h4><p style="font-size:0.9rem;">Consistent quality and quantity for premium international markets.</p></div>
+          <div style="display:flex;flex-direction:column;align-items:center;text-align:center;gap:1rem;">
+            <img src="images/about_sustainability.png" alt="Export farm aerial view" style="width:64px;height:64px;border-radius:14px;object-fit:cover;flex-shrink:0;"/>
+            <div><h4>Export Businesses</h4><p style="font-size:0.9rem;">Consistent quality and quantity for markets.</p></div>
           </div>
-          <div style="display:flex;align-items:flex-start;gap:1rem;">
-            <img src="images/product_tower.png" alt="Agri startup vertical farm" style="width:48px;height:48px;border-radius:10px;object-fit:cover;flex-shrink:0;"/>
-            <div><h4>Agri Startups</h4><p style="font-size:0.9rem;">Turnkey business packages to get your venture profitable faster.</p></div>
-          </div>
-        </div>
-        <a href="services.html" class="btn btn-primary" style="margin-top:2rem;">Explore Solutions &rarr;</a>
-      </div>
-      <div class="reveal reveal-delay-2">
-        <div class="industries-grid">
-          <div style="text-align:center;">
-            <img src="images/about_team.png" alt="Restaurants" style="width:100%;height:110px;object-fit:cover;border-radius:14px;margin-bottom:0.5rem;"/>
-            <div style="font-weight:700;font-size:0.88rem;">Restaurants</div>
-          </div>
-          <div style="text-align:center;">
-            <img src="images/hero_farm_overview.png" alt="Supermarkets" style="width:100%;height:110px;object-fit:cover;border-radius:14px;margin-bottom:0.5rem;"/>
-            <div style="font-weight:700;font-size:0.88rem;">Supermarkets</div>
-          </div>
-          <div style="text-align:center;">
-            <img src="images/about_sustainability.png" alt="Export farms" style="width:100%;height:110px;object-fit:cover;border-radius:14px;margin-bottom:0.5rem;"/>
-            <div style="font-weight:700;font-size:0.88rem;">Export Farms</div>
-          </div>
-          <div style="text-align:center;">
-            <img src="images/service_turnkey.png" alt="Government projects" style="width:100%;height:110px;object-fit:cover;border-radius:14px;margin-bottom:0.5rem;"/>
-            <div style="font-weight:700;font-size:0.88rem;">Gov Projects</div>
-          </div>
-          <div style="text-align:center;">
-            <img src="images/product_tower.png" alt="Agri startups" style="width:100%;height:110px;object-fit:cover;border-radius:14px;margin-bottom:0.5rem;"/>
-            <div style="font-weight:700;font-size:0.88rem;">Agri Startups</div>
-          </div>
-          <div style="text-align:center;">
-            <img src="images/hero_vertical_farm.png" alt="Urban farming" style="width:100%;height:110px;object-fit:cover;border-radius:14px;margin-bottom:0.5rem;"/>
-            <div style="font-weight:700;font-size:0.88rem;">Urban Farms</div>
+          <div style="display:flex;flex-direction:column;align-items:center;text-align:center;gap:1rem;">
+            <img src="images/product_tower.png" alt="Agri startup vertical farm" style="width:64px;height:64px;border-radius:14px;object-fit:cover;flex-shrink:0;"/>
+            <div><h4>Agri Startups</h4><p style="font-size:0.9rem;">Turnkey business packages to get running.</p></div>
           </div>
         </div>
+        <a href="services.html" class="btn btn-primary">Explore Solutions &rarr;</a>
       </div>
     </div>
   </div>
@@ -294,7 +264,7 @@
 <!-- CTA BANNER -->
 <section class="section">
   <div class="container">
-    <div class="cta-banner reveal">
+    <div class="cta-banner bg-image reveal" style="background-image: url('images/hero_vertical_farm.png');">
       <div class="section-label" style="color:#fff;background:rgba(255,255,255,0.15);border-color:rgba(255,255,255,0.3);">Ready to Grow?</div>
       <h2>Start Your Vertical Farm <span style="color:var(--accent2)">Today</span></h2>
       <p>Join 1,400+ businesses already growing smarter. Our experts will design a system tailored to your space, budget, and goals.</p>
@@ -316,7 +286,7 @@
           Hydro<span>Farm</span> Pro
         </div>
         <p>The world's leading B2B hydroponic vertical farm solutions provider. Building sustainable food systems for a better tomorrow.</p>
-        <div class="social-links" style="margin-top:1.5rem;">
+        <div class="social-links" style="margin-top:1.5rem;justify-content:center;">
           <a href="#" class="social-link">Li</a>
           <a href="#" class="social-link">Tw</a>
           <a href="#" class="social-link">YT</a>
@@ -346,10 +316,10 @@
       <div>
         <div class="footer-heading">Get In Touch</div>
         <ul class="footer-contact">
-          <li><span>&#8962;</span><span>42 Green Tower, Dubai, UAE</span></li>
-          <li><span>&#128222;</span><span>+971 4 000 0000</span></li>
-          <li><span>&#9993;</span><span>info@hydrofarm.pro</span></li>
-          <li><span>&#9200;</span><span>Mon–Sat, 9AM–6PM GST</span></li>
+          <li style="justify-content:center;"><span>&#8962;</span><span>42 Green Tower, Dubai, UAE</span></li>
+          <li style="justify-content:center;"><span>&#128222;</span><span>+971 4 000 0000</span></li>
+          <li style="justify-content:center;"><span>&#9993;</span><span>info@hydrofarm.pro</span></li>
+          <li style="justify-content:center;"><span>&#9200;</span><span>Mon–Sat, 9AM–6PM GST</span></li>
         </ul>
         <a href="contact.html" class="btn btn-outline btn-sm" style="margin-top:1rem;">Get a Quote</a>
       </div>

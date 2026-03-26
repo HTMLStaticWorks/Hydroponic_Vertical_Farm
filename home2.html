@@ -39,16 +39,16 @@
 </div>
 
 <!-- VIDEO HERO -->
-<section class="video-hero" style="padding-top:var(--nav-height);">
+<section class="video-hero text-center" style="padding-top:var(--nav-height);">
   <div class="video-hero-bg">
     <img src="images/hero_vertical_farm.png" alt="Hydroponic vertical farm interior"/>
   </div>
-  <div class="container">
-    <div style="max-width:700px;" class="animate-fadeUp">
+  <div class="container" style="display:flex; justify-content:center;">
+    <div style="max-width:800px;" class="animate-fadeUp">
       <div class="hero-badge">B2B Solutions</div>
       <h1 style="color:#fff;font-size:clamp(2rem,5vw,3.8rem);margin-bottom:1.5rem;">Turn Any Space into a <span style="color:var(--accent)">Profitable Farm</span></h1>
-      <p style="color:rgba(255,255,255,0.8);font-size:1.15rem;margin-bottom:2.5rem;">Deploy a full-scale hydroponic vertical farm in under 8 weeks. ROI achieved in as little as 14 months.</p>
-      <div style="display:flex;gap:1rem;flex-wrap:wrap;">
+      <p style="color:rgba(255,255,255,0.8);font-size:1.15rem;margin-bottom:2.5rem;max-width:640px;margin-left:auto;margin-right:auto;">Deploy a full-scale hydroponic vertical farm in under 8 weeks. ROI achieved in as little as 14 months.</p>
+      <div style="display:flex;gap:1rem;flex-wrap:wrap;justify-content:center;">
         <a href="contact.html" class="btn btn-gold btn-lg">Get Free ROI Report</a>
         <a href="contact.html" class="btn btn-light btn-lg">Book Live Demo</a>
       </div>
@@ -57,7 +57,7 @@
 </section>
 
 <!-- ROI HIGHLIGHTS -->
-<section class="section">
+<section class="section position-relative" style="background: linear-gradient(135deg, rgba(30,111,76,0.05), rgba(82,183,136,0.1));">
   <div class="container">
     <div class="text-center reveal">
       <div class="section-label">Why Invest Now</div>
@@ -90,33 +90,33 @@
 <!-- SETUP TIMELINE -->
 <section class="section section-alt">
   <div class="container">
-    <div style="display:grid;grid-template-columns:1fr 1fr;gap:5rem;align-items:start;">
-      <div class="reveal">
+    <div style="display:flex;flex-direction:column;align-items:center;">
+      <div class="reveal text-center">
         <div class="section-label">Your Journey</div>
         <h2 class="section-title">From Concept to <span class="text-gradient">First Harvest</span></h2>
-        <p style="margin-bottom:3rem;">Our streamlined process gets your farm producing within weeks, not months.</p>
-        <div>
+        <p style="margin-bottom:3rem;max-width:600px;margin-left:auto;margin-right:auto;">Our streamlined process gets your farm producing within weeks, not months.</p>
+        
+        <div style="max-width:500px;margin:0 auto;text-align:left;">
           <div class="timeline-item">
-            <div class="timeline-num">1</div>
+            <div class="timeline-num" style="margin:0;">1</div>
             <div><h4>Consultation &amp; Site Survey</h4><p style="font-size:0.9rem;color:var(--text-muted);">Week 1–2: Our team assesses your space, crops, and business goals to design the optimal system.</p></div>
           </div>
           <div class="timeline-item">
-            <img src="images/service_turnkey.png" alt="Design" class="timeline-img"/>
+            <img src="images/service_turnkey.png" alt="Design" class="timeline-img" style="margin:0;"/>
             <div><h4>Custom Design &amp; Procurement</h4><p style="font-size:0.9rem;color:var(--text-muted);">Week 3–4: We engineer your farm layout and order all equipment.</p></div>
           </div>
           <div class="timeline-item">
-            <img src="images/product_tower.png" alt="Installation" class="timeline-img"/>
+            <img src="images/product_tower.png" alt="Installation" class="timeline-img" style="margin:0;"/>
             <div><h4>Installation &amp; Commissioning</h4><p style="font-size:0.9rem;color:var(--text-muted);">Week 5–7: Your certified installation team sets up all hardware and software.</p></div>
           </div>
           <div class="timeline-item">
-            <img src="images/about_team.png" alt="Training" class="timeline-img"/>
+            <img src="images/about_team.png" alt="Training" class="timeline-img" style="margin:0;"/>
             <div><h4>Training &amp; First Harvest</h4><p style="font-size:0.9rem;color:var(--text-muted);">Week 8+: Staff training + plant seeding. First harvest in as little as 3–4 weeks post-planting.</p></div>
           </div>
         </div>
-        <a href="services.html" class="btn btn-primary" style="margin-top:1rem;">View All Services &rarr;</a>
-      </div>
-      <div class="reveal reveal-delay-2">
-        <img src="images/service_turnkey.png" alt="Farm installation in progress" style="width:100%;height:480px;object-fit:cover;border-radius:24px;box-shadow:var(--shadow-lg);"/>
+        <div style="text-align:center;margin-top:2rem;">
+          <a href="services.html" class="btn btn-primary">View All Services &rarr;</a>
+        </div>
       </div>
     </div>
   </div>
@@ -180,7 +180,8 @@
 <!-- CTA -->
 <section class="section">
   <div class="container">
-    <div class="cta-banner reveal">
+    <div class="cta-banner bg-image reveal" style="background-image: url('images/hero_vertical_farm.png');">
+      <div class="section-label" style="color:#fff;background:rgba(255,255,255,0.15);border-color:rgba(255,255,255,0.3);">Ready to Grow?</div>
       <h2>Ready to <span style="color:var(--accent2)">Start Growing?</span></h2>
       <p>Join 1,400+ businesses already transforming their operations with HydroFarm Pro.</p>
       <div class="cta-btns">
@@ -195,10 +196,19 @@
 <footer class="site-footer">
   <div class="container">
     <div class="footer-grid">
-      <div class="footer-brand"><div class="footer-logo"><img src="images/logo_leaf.png" alt="" style="width:26px;height:26px;object-fit:cover;border-radius:5px;"/> Hydro<span>Farm</span> Pro</div><p>The world's leading B2B hydroponic vertical farm solutions provider.</p><div class="social-links" style="margin-top:1.5rem;"><a href="#" class="social-link">Li</a><a href="#" class="social-link">Tw</a><a href="#" class="social-link">YT</a><a href="#" class="social-link">Fb</a></div></div>
+      <div class="footer-brand"><div class="footer-logo"><img src="images/logo_leaf.png" alt="" style="width:26px;height:26px;object-fit:cover;border-radius:5px;"/> Hydro<span>Farm</span> Pro</div><p>The world's leading B2B hydroponic vertical farm solutions provider.</p>        <div class="social-links" style="margin-top:1.5rem;justify-content:center;">
+          <a href="#" class="social-link">Li</a>
+          <a href="#" class="social-link">Tw</a>
+          <a href="#" class="social-link">YT</a>
+          <a href="#" class="social-link">Fb</a>
+        </div></div>
       <div><div class="footer-heading">Solutions</div><ul class="footer-links"><li><a href="services.html">Services</a></li><li><a href="technology.html">Technology</a></li><li><a href="products.html">Products</a></li></ul></div>
       <div><div class="footer-heading">Company</div><ul class="footer-links"><li><a href="about.html">About Us</a></li><li><a href="contact.html">Contact</a></li><li><a href="dashboard.html">B2B Portal</a></li></ul></div>
-      <div><div class="footer-heading">Get In Touch</div><ul class="footer-contact"><li><span>&#8962;</span><span>42 Green Tower, Dubai, UAE</span></li><li><span>&#128222;</span><span>+971 4 000 0000</span></li><li><span>&#9993;</span><span>info@hydrofarm.pro</span></li></ul></div>
+      <div><div class="footer-heading">Get In Touch</div>        <ul class="footer-contact">
+          <li style="justify-content:center;"><span>&#8962;</span><span>42 Green Tower, Dubai, UAE</span></li>
+          <li style="justify-content:center;"><span>&#128222;</span><span>+971 4 000 0000</span></li>
+          <li style="justify-content:center;"><span>&#9993;</span><span>info@hydrofarm.pro</span></li>
+        </ul></div>
     </div>
     <div class="footer-bottom"><span>&copy; 2026 HydroFarm Pro. All rights reserved.</span><span>Sustainable Farming</span></div>
   </div>

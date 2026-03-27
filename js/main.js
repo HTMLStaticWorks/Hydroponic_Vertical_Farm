@@ -30,6 +30,7 @@ function initTheme() {
       html.setAttribute('data-theme', next);
       localStorage.setItem('farm-theme', next);
       updateThemeBtn(next);
+      document.dispatchEvent(new CustomEvent('themeChanged', { detail: { theme: next } }));
     });
   });
 }

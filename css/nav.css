@@ -25,7 +25,7 @@
 /* ── Logo ── */
 .nav-logo {
   display: flex; align-items: center; gap: 0.55rem;
-  font-family: 'Outfit', sans-serif; font-size: 1.28rem; font-weight: 800;
+  font-family: 'Outfit', sans-serif; font-size: 1.25rem; font-weight: 800;
   color: var(--text-primary); text-decoration: none;
   white-space: nowrap; flex-shrink: 0;
 }

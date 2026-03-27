@@ -41,18 +41,48 @@ function initDashboardTabs() {
   });
 }
 
+const globalChartInstances = {};
+
 /* ── Charts (Chart.js) ── */
+function getChartColors() {
+  const isDark = document.documentElement.getAttribute('data-theme') === 'dark';
+  return {
+    grid: isDark ? 'rgba(255,255,255,0.12)' : 'rgba(0,0,0,0.06)',
+    text: isDark ? 'rgba(255,255,255,0.75)' : 'rgba(0,0,0,0.55)',
+    isDark
+  };
+}
+
+function updateChartColors() {
+  const colors = getChartColors();
+  Object.values(globalChartInstances).forEach(chart => {
+    if (chart.options.scales) {
+      if (chart.options.scales.x) {
+        chart.options.scales.x.grid.color = colors.grid;
+        chart.options.scales.x.ticks.color = colors.text;
+      }
+      if (chart.options.scales.y) {
+        chart.options.scales.y.grid.color = colors.grid;
+        chart.options.scales.y.ticks.color = colors.text;
+      }
+    }
+    if (chart.options.plugins && chart.options.plugins.legend) {
+      chart.options.plugins.legend.labels.color = colors.text;
+    }
+    chart.update();
+  });
+}
+
+document.addEventListener('themeChanged', updateChartColors);
+
 function initCharts() {
   if (typeof Chart === 'undefined') return;
+  const colors = getChartColors();
 
   // ── Yield Line Chart ──
   const ctxLine = document.getElementById('yield-chart');
   if (ctxLine) {
-    const isDark = document.documentElement.getAttribute('data-theme') === 'dark';
-    const gridColor = isDark ? 'rgba(255,255,255,0.07)' : 'rgba(0,0,0,0.06)';
-    const textColor = isDark ? 'rgba(255,255,255,0.6)' : 'rgba(0,0,0,0.55)';
-
-    new Chart(ctxLine, {
+    globalChartInstances.yield = new Chart(ctxLine, {
       type: 'line',
       data: {
         labels: ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'],
@@ -86,10 +116,10 @@ function initCharts() {
       },
       options: {
         responsive: true, maintainAspectRatio: false,
-        plugins: { legend: { labels: { color: textColor, font: { family: 'Inter', size: 12 } } } },
+        plugins: { legend: { labels: { color: colors.text, font: { family: 'Inter', size: 12 } } } },
         scales: {
-          x: { grid: { color: gridColor }, ticks: { color: textColor, font: { size: 11 } } },
-          y: { grid: { color: gridColor }, ticks: { color: textColor, font: { size: 11 } } }
+          x: { grid: { color: colors.grid }, ticks: { color: colors.text, font: { size: 11 } } },
+          y: { grid: { color: colors.grid }, ticks: { color: colors.text, font: { size: 11 } } }
         }
       }
     });
@@ -98,7 +128,7 @@ function initCharts() {
   // ── Crop Doughnut Chart ──
   const ctxDough = document.getElementById('crop-chart');
   if (ctxDough) {
-    new Chart(ctxDough, {
+    globalChartInstances.crop = new Chart(ctxDough, {
       type: 'doughnut',
       data: {
         labels: ['Lettuce','Basil','Spinach','Kale','Herbs'],
@@ -114,7 +144,7 @@ function initCharts() {
         plugins: {
           legend: {
             position: 'bottom',
-            labels: { padding: 16, font: { family: 'Inter', size: 11 } }
+            labels: { color: colors.text, padding: 16, font: { family: 'Inter', size: 11 } }
           }
         }
       }
@@ -124,10 +154,7 @@ function initCharts() {
   // ── Sales Bar Chart ──
   const ctxBar = document.getElementById('sales-chart');
   if (ctxBar) {
-    const isDark = document.documentElement.getAttribute('data-theme') === 'dark';
-    const gridColor = isDark ? 'rgba(255,255,255,0.07)' : 'rgba(0,0,0,0.06)';
-    const textColor = isDark ? 'rgba(255,255,255,0.6)' : 'rgba(0,0,0,0.55)';
-    new Chart(ctxBar, {
+    globalChartInstances.sales = new Chart(ctxBar, {
       type: 'bar',
       data: {
         labels: ['Q1','Q2','Q3','Q4'],
@@ -142,8 +169,8 @@ function initCharts() {
         responsive: true, maintainAspectRatio: false,
         plugins: { legend: { display: false } },
         scales: {
-          x: { grid: { display: false }, ticks: { color: textColor } },
-          y: { grid: { color: gridColor }, ticks: { color: textColor } }
+          x: { grid: { display: false }, ticks: { color: colors.text } },
+          y: { grid: { color: colors.grid }, ticks: { color: colors.text } }
         }
       }
     });

@@ -106,13 +106,17 @@ p  { color: var(--text-secondary); font-size: 1.02rem; }
 .grid-3 { display: grid; grid-template-columns: repeat(3,1fr); gap: 2rem; }
 .grid-4 { display: grid; grid-template-columns: repeat(4,1fr); gap: 1.5rem; }
 @media (max-width: 900px) {
-  .grid-4 { grid-template-columns: repeat(2,1fr); }
-  .grid-3 { grid-template-columns: repeat(2,1fr); }
+  .grid-4, .grid-3 { grid-template-columns: repeat(2,1fr); }
+  .grid-2 { grid-template-columns: 1fr; }
   .grid-3 > *:last-child:nth-child(odd) {
     grid-column: 1 / -1;
     justify-self: center;
     width: calc(50% - 1rem);
   }
+}
+@media (max-width: 768px) {
+  .card { padding: 1.5rem; }
+  .contact-grid { gap: 2rem !important; }
 }
 @media (max-width: 600px) {
   .grid-4, .grid-3, .grid-2 { grid-template-columns: 1fr; }

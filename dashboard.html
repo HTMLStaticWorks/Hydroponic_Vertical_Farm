@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en" data-theme="light">
 
 <head>
@@ -139,8 +139,8 @@
         </div>
         <div class="dash-nav-section">
           <div class="dash-nav-label">Farm Sites</div>
-          <a href="#" class="dash-nav-link"><img src="images/hero_farm_overview.png" alt="" style="width:18px;height:18px;border-radius:4px;object-fit:cover;"/> Dubai â€” Alpha</a>
-          <a href="#" class="dash-nav-link"><img src="images/hero_farm_overview.png" alt="" style="width:18px;height:18px;border-radius:4px;object-fit:cover;"/> Abu Dhabi â€” Beta</a>
+          <a href="#" class="dash-nav-link"><img src="images/hero_farm_overview.png" alt="" style="width:18px;height:18px;border-radius:4px;object-fit:cover;"/> Dubai - Alpha</a>
+          <a href="#" class="dash-nav-link"><img src="images/hero_farm_overview.png" alt="" style="width:18px;height:18px;border-radius:4px;object-fit:cover;"/> Abu Dhabi - Beta</a>
           <a href="contact.html" class="dash-nav-link" style="color:var(--accent);">+ Add New Farm</a>
         </div>
       </nav>
@@ -228,7 +228,7 @@
             <div class="chart-card-header">
               <div>
                 <div class="chart-title">Annual Yield &amp; Water Usage</div>
-                <div class="chart-subtitle">2026 â€” Monthly</div>
+                <div class="chart-subtitle">2026 - Monthly</div>
               </div>
             </div>
             <div class="chart-container"><canvas id="yield-chart"></canvas></div>
@@ -259,11 +259,11 @@
           <div class="dash-header-actions"><button class="btn btn-outline btn-sm">Set Alert Thresholds</button></div>
         </div>
 
-        <div class="sensor-grid" style="grid-template-columns:repeat(3,1fr);margin-bottom:2rem;">
+        <div class="sensor-grid">
           <div class="sensor-card">
             <div class="sensor-label">Temperature</div>
-            <div class="sensor-value" id="sensor-temp">22Â°C</div>
-            <div class="sensor-unit">Target: 22 Â± 2Â°C</div>
+            <div class="sensor-value" id="sensor-temp">22°C</div>
+            <div class="sensor-unit">Target: 22 ± 2°C</div>
             <div class="sensor-bar">
               <div class="sensor-fill" id="sensor-temp-bar" style="width:55%"></div>
             </div>
@@ -271,7 +271,7 @@
           <div class="sensor-card">
             <div class="sensor-label">Humidity</div>
             <div class="sensor-value" id="sensor-humidity">68%</div>
-            <div class="sensor-unit">Target: 65â€“75%</div>
+            <div class="sensor-unit">Target: 65-75%</div>
             <div class="sensor-bar">
               <div class="sensor-fill" id="sensor-humidity-bar" style="width:68%"></div>
             </div>
@@ -279,7 +279,7 @@
           <div class="sensor-card">
             <div class="sensor-label">pH Level</div>
             <div class="sensor-value" id="sensor-ph">6.2</div>
-            <div class="sensor-unit">Target: 5.8â€“6.5</div>
+            <div class="sensor-unit">Target: 5.8-6.5</div>
             <div class="sensor-bar">
               <div class="sensor-fill" id="sensor-ph-bar" style="width:44%"></div>
             </div>
@@ -287,7 +287,7 @@
           <div class="sensor-card">
             <div class="sensor-label">EC Level</div>
             <div class="sensor-value" id="sensor-ec">1.8 mS/cm</div>
-            <div class="sensor-unit">Target: 1.6â€“2.0</div>
+            <div class="sensor-unit">Target: 1.6-2.0</div>
             <div class="sensor-bar">
               <div class="sensor-fill" id="sensor-ec-bar" style="width:45%"></div>
             </div>
@@ -295,15 +295,15 @@
           <div class="sensor-card">
             <div class="sensor-label">CO2 Level</div>
             <div class="sensor-value" id="sensor-co2">800 ppm</div>
-            <div class="sensor-unit">Target: 800â€“1200 ppm</div>
+            <div class="sensor-unit">Target: 800-1200 ppm</div>
             <div class="sensor-bar">
               <div class="sensor-fill" id="sensor-co2-bar" style="width:40%"></div>
             </div>
           </div>
           <div class="sensor-card">
             <div class="sensor-label">Light (PPFD)</div>
-            <div class="sensor-value" id="sensor-light">420 Âµmol</div>
-            <div class="sensor-unit">Target: 400â€“600 Âµmol</div>
+            <div class="sensor-value" id="sensor-light">420 µmol</div>
+            <div class="sensor-unit">Target: 400-600 µmol</div>
             <div class="sensor-bar">
               <div class="sensor-fill" id="sensor-light-bar" style="width:70%"></div>
             </div>
@@ -314,6 +314,7 @@
           <div class="table-header">
             <div class="chart-title">Growing Zones â€” Status</div>
           </div>
+        <div class="table-responsive">
           <table class="data-table">
             <thead>
               <tr>
@@ -362,8 +363,8 @@
                 <td>Zone B3</td>
                 <td><img src="images/product_nutrients.png" alt="" class="zone-thumb" /></td>
                 <td>Nutrients (prep)</td>
-                <td>â€”</td>
-                <td>â€”</td>
+                <td>-</td>
+                <td>-</td>
                 <td><span class="status-pill open">Low EC</span></td>
               </tr>
               <tr>
@@ -377,6 +378,7 @@
             </tbody>
           </table>
         </div>
+        </div>
       </div>
 
       <!-- ANALYTICS -->
@@ -384,7 +386,7 @@
         <div class="dash-header">
           <div>
             <div class="dash-page-title">Analytics</div>
-            <div class="dash-date">2026 â€” Full Year</div>
+            <div class="dash-date">2026 - Full Year</div>
           </div>
           <div class="dash-header-actions"><select class="form-control"
               style="width:auto;padding:0.4rem 1rem;font-size:0.85rem;">
@@ -457,6 +459,7 @@
           <div class="table-header">
             <div class="chart-title">Recent Orders</div>
           </div>
+        <div class="table-responsive">
           <table class="data-table">
             <thead>
               <tr>
@@ -509,6 +512,7 @@
             </tbody>
           </table>
         </div>
+        </div>
       </div>
 
       <!-- SUPPORT TICKETS -->
@@ -524,6 +528,7 @@
           <div class="table-header">
             <div class="chart-title">Active Support Tickets</div>
           </div>
+        <div class="table-responsive">
           <table class="data-table">
             <thead>
               <tr>
@@ -562,6 +567,7 @@
               </tr>
             </tbody>
           </table>
+        </div>
         </div>
       </div>
 

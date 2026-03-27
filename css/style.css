@@ -550,6 +550,10 @@ select.form-control { appearance: none; cursor: pointer; }
 .dot { width: 8px; height: 8px; border-radius: 50%; background: var(--border); cursor: pointer; transition: background var(--transition), transform var(--transition); }
 .dot.active { background: var(--accent); transform: scale(1.4); }
 
+@media (max-width: 480px) {
+  .btn-lg { padding: 0.9em 1.4em; }
+}
+
 /* ── Back to Top ── */
 .back-to-top {
   position: fixed; bottom: 2rem; right: 2rem;

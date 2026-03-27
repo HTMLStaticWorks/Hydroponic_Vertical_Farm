@@ -300,6 +300,28 @@
   .dash-main { padding: 1.2rem; }
   .sensor-grid { grid-template-columns: 1fr 1fr; }
 }
+@media (max-width: 480px) {
+  .sensor-grid { grid-template-columns: 1fr; }
+}
 @media (max-width: 400px) {
   .kpi-grid { grid-template-columns: 1fr; }
+}
+
+/* ── Responsive Tables ── */
+.table-responsive {
+  width: 100%;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  margin-bottom: 1.5rem;
+  border-radius: var(--radius-sm);
+}
+.table-responsive .data-table {
+  min-width: 600px; /* Ensures the table doesn't shrink too much on mobile */
+}
+.table-responsive::-webkit-scrollbar {
+  height: 6px;
+}
+.table-responsive::-webkit-scrollbar-thumb {
+  background: var(--border);
+  border-radius: 10px;
 }

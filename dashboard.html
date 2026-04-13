@@ -69,10 +69,7 @@
 
 <body>
 
-<div class="dash-global-toggles">
-  <button class="icon-btn" data-theme-toggle title="Toggle Dark Mode">&#9681;</button>
-  <button class="icon-btn" data-rtl-toggle id="rtl-label" title="Toggle RTL">RTL</button>
-</div>
+
 
 
   <div class="nav-overlay" id="nav-overlay"></div>
@@ -102,6 +99,10 @@
     <aside class="dash-sidebar" id="dash-sidebar">
 
       <div class="dash-sidebar-header">
+        <div style="display:flex;justify-content:flex-end;gap:0.5rem;margin-bottom:1.2rem;">
+          <button class="icon-btn" data-theme-toggle title="Toggle Dark Mode" style="width:30px;height:30px;font-size:0.85rem;">&#9681;</button>
+          <button class="icon-btn" data-rtl-toggle id="rtl-label" title="Toggle RTL" style="width:30px;height:30px;font-size:0.55rem;">RTL</button>
+        </div>
         <a href="index.html" class="dash-brand">
           <div class="logo-icon"><img src="images/logo_leaf.png" alt=""
               style="width:24px;height:24px;object-fit:cover;" /></div>

@@ -588,6 +588,34 @@
   margin-bottom: 0.15rem;
 }
 
+/* ── Floating Theme / RTL Toggles ── */
+.dash-floating-toggles {
+  position: fixed;
+  top: 0.4rem;
+  right: 0.4rem;
+  z-index: 1200;
+  display: flex;
+  gap: 0.25rem;
+  background: var(--bg-card);
+  border: 1px solid var(--border-light);
+  border-radius: 8px;
+  padding: 0.2rem 0.3rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(10px);
+}
+
+.dash-floating-toggles .icon-btn {
+  width: 24px;
+  height: 24px;
+  font-size: 0.7rem;
+  border-radius: 4px;
+}
+
+[dir="rtl"] .dash-floating-toggles {
+  right: auto;
+  left: 0.4rem;
+}
+
 /* ── Responsive ── */
 .dash-hamburger {
   display: none;
